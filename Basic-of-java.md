@@ -127,6 +127,92 @@ corresponds to a specific number.
      is 8 bytes or 64 bits.
 ## Syntax
    double doubleVar;
+________________________________________________________________________________________________________________________
+ 
+  # Chapter 3 
+
+  ## if else statement in java
+  
+  ##    1.if statment
+     
+   ##  2. if - else statement
+     
+  ##   3. if - else if - else statement
+     
+   ##  4. Boolean value
+     
+  ##   5. Operators involved in conditional expression
+
+ ##  if statment
+     The if statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code 
+     only if a particular test evaluates to true.
+
+### Syntax:  
+
+  if(condition)
+  
+{
+
+   // Statements to execute if
+   
+   // condition is true
+   
+}
+
+![image](https://github.com/user-attachments/assets/1822e6fe-d792-47b1-9cf2-1be078ae4184)
+
+1	The program checks the condition.
+
+2	If the condition is true, code in the if block will be executed. It then continues executing the codes below the if block.
+
+3	If the condition is false, the program will ignores the code in the if block and execute code snippets below the if block.
+
+### Example:
+
+int num =3;
+
+if(num>0)
+
+{
+
+System.out.print("The number is positive");
+
+}
+
+Output:
+
+The number is positive
+
+# if - else statement
+The if-else statement in Java is a powerful decision-making tool used to control the program’s flow based on conditions. 
+It executes one block of code if a condition is true and another block if the condition is false.
+
+### Syntax of if-else Statement
+
+     if (condition)
+{
+    // Executes this block if
+    // condition is true
+}
+else
+{
+    // Executes this block if
+    // condition is false
+}
+
+![image](https://github.com/user-attachments/assets/200548e4-05b0-42c8-9411-759efd49cd97)
+
+
+
+
+
+
+
+
+     
+
+     
+  
 
 
     
