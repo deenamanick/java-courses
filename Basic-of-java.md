@@ -359,6 +359,11 @@ Output :
     break means a statement to be able to appear in the case block, or default block of switch. 
     When meeting the break statement, the program will exit the switch.
 
+
+![image](https://github.com/user-attachments/assets/284da333-5e38-4277-a0de-16090dab7a4d)
+
+
+
   ### Example
 
    public class SwitchExample
@@ -411,6 +416,73 @@ Output :
 
 Ouput:
    The day is: Wednesday
+
+   # Chapter 5 
+  ###  Loops in Java
+  ### 1.Loops in Java 
+  ### 2.for Loop 
+  ### 3.for-each loop 
+  ### 4.while Loop 
+###   5.do-while Loop 
+###   6.The break statement in loop 
+###   7.The continue statement in a loop 
+###   8.Labelled Loop
+
+##  1   Loops in Java
+         In Java, loops are used to execute a block of code repeatedly under certain conditions. 
+         Java supports the following main types of loops
+    
+           1.for loop
+           2.while loop 
+           3.do-while loop
+
+  ###     for loop  
+            A for loop is a control flow statement used to repeat a block of code a specific number of times
+            
+          Statement 1 
+          
+              sets a variable before the loop starts (int i = 0).
+
+          Statement 2 
+          
+              defines the condition for the loop to run (i must be less than 5).
+              
+              If the condition is true, the loop will start over again, 
+              
+              if it is false, the loop will end.
+
+          Statement 3 
+          
+             increases a value (i++) each time the code block in the loop has been executed.
+
+###  Example 
+              
+               public class Main 
+               {
+               public static void main(String[] args) 
+               {
+                 int sum = 0;
+                 for (int i = 1; i <= 10; i++) {
+                 sum += i;
+              }
+                 System.out.println("Sum: " + sum);
+             }
+           }
+
+           Output:
+
+              sum:55
+
+              
+
+              
+
+
+           
+
+
+
+   
 
    
   
