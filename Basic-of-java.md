@@ -190,17 +190,241 @@ It executes one block of code if a condition is true and another block if the co
 ### Syntax of if-else Statement
 
      if (condition)
+     
 {
+   
     // Executes this block if
+    
     // condition is true
+
 }
+
 else
+
 {
+    
     // Executes this block if
+    
     // condition is false
+
 }
 
 ![image](https://github.com/user-attachments/assets/200548e4-05b0-42c8-9411-759efd49cd97)
+
+# if - else if - else statement
+    the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
+### Syntax:
+    if (condition1) 
+    
+    {
+    
+    // code block for condition1
+    
+} 
+
+else if (condition2) 
+
+{
+    
+    // code block for condition2
+    
+} 
+
+else 
+
+{
+    
+    // code block if none of the above conditions are true
+    
+}
+
+![image](https://github.com/user-attachments/assets/90295ded-271e-464e-94a6-5c883177adb8)
+
+# Boolean value
+  boolean is a data type, it only has two values true or false.
+
+  This is useful to build logic, and find answers.
+
+  For example, you can use a comparison operator, such as the greater than (>) operator, to find out if an expression is true or false
+
+  int x = 10;
+  
+  int y = 9;
+  
+  System.out.println(x > y); // returns true, because 10 is higher than 9
+
+  Output:
+  
+       true
+_______________________________________________________________________________________________________________________________________
+
+# Chapter 4
+
+## Switch Statement in Java
+##               1.Structure of switch statement 
+               
+ ##              2.switch Example 
+               
+ ##              3.break statement in switch
+
+###  1    Structure of switch statement
+     
+     switch(expression)   
+    {
+    
+  case value1 :
+  
+     // Statements
+     
+     break; // break is optional
+  
+  case value2 :
+  
+     // Statements
+     
+     break; // break is optional
+     ….
+     ….
+     ….
+   default :
+   
+     // default Statement
+     
+}
+
+###  2.Switch Example
+
+      public class SwitchWithoutBreak 
+      
+      {
+      
+      public static void main(String[] args) 
+      
+      {
+       
+        int day = 3;
+        
+        String dayName = "";
+
+        switch (day) 
+        
+        {
+            
+            case 1:
+                
+                dayName = "Monday";
+            
+            case 2:
+                
+                dayName = "Tuesday";
+            case 3:
+                
+                dayName = "Wednesday";
+            
+            case 4:
+                
+                dayName = "Thursday";
+            
+            case 5:
+                
+                dayName = "Friday";
+           
+            case 6:
+                
+                dayName = "Saturday";
+           
+            case 7:
+                
+                dayName = "Sunday";
+            
+            default:
+               
+                dayName = "Invalid day";
+        
+        }
+
+        
+        System.out.println("The day is: " + dayName);
+    
+    }
+
+}
+
+Output :
+
+   The day is: Invalid day
+
+   ### 3 break statement in switch
+
+    break means a statement to be able to appear in the case block, or default block of switch. 
+    When meeting the break statement, the program will exit the switch.
+
+  ### Example
+
+   public class SwitchExample
+   
+   {
+    
+    public static void main(String[] args) 
+    
+    {
+        
+        int day = 3;
+        
+        String dayName;
+
+        switch (day) 
+        
+        {
+           
+            case 1:
+                
+                dayName = "Monday";
+                
+                break;
+            
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day";
+        }
+
+        System.out.println("The day is: " + dayName);
+    }
+}
+
+Ouput:
+   The day is: Wednesday
+
+   
+  
+
+
+
+
+     
+
+
+
+
+
+
 
 
 
