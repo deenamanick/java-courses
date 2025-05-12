@@ -418,7 +418,6 @@ Ouput:
    The day is: Wednesday
 
    # Chapter 5 
-  ###  Loops in Java
   ### 1.Loops in Java 
   ### 2.for Loop 
   ### 3.for-each loop 
@@ -428,16 +427,18 @@ Ouput:
 ###   7.The continue statement in a loop 
 ###   8.Labelled Loop
 
-##  1   Loops in Java
+##  1.  Loops in Java
+
          In Java, loops are used to execute a block of code repeatedly under certain conditions. 
          Java supports the following main types of loops
     
            1.for loop
            2.while loop 
            3.do-while loop
-
-  ###     for loop  
+           
+### 2.   for loop  
             A for loop is a control flow statement used to repeat a block of code a specific number of times
+            
             
           Statement 1 
           
