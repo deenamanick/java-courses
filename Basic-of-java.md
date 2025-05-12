@@ -476,6 +476,215 @@ A for loop is a control flow statement used to repeat a block of code a specific
 
               sum:55
 
+# While Loop
+
+Java while loop is a control flow statement used to execute the block of statements repeatedly until the given condition evaluates to false.
+Once the condition becomes false, the line immediately after the loop in the program is executed.
+
+### Example
+    public class WhileLoop {
+    public static void main(String[] args) {
+      
+      // Initialize the counter variable
+      int c = 1; 
+
+        // While loop to print numbers from 1 to 5
+        while (c <= 5) {
+          
+          System.out.println(c); 
+            
+          // Increment the counter
+          c++; 
+        }
+    }
+    }
+
+  ### output
+         1
+         2
+         3
+         4
+         5
+
+# do-While Loop
+In Java, a do-while loop is a control flow statement that executes a block of code at least once, and then repeatedly executes the block as long as the given condition is true.
+### Syntax
+   do {
+    // Code to execute
+} while (condition);
+
+### Example
+     int i = 1;
+do {
+    System.out.println("Value of i: " + i);
+    i++;
+} while (i <= 5);
+
+### output
+Value of i: 1
+Value of i: 2
+Value of i: 3
+Value of i: 4
+Value of i: 5
+
+# for-each loop
+
+a for-each loop (also called the enhanced for loop) is used to iterate over elements in arrays or collections like ArrayList, HashSet, etc.  It provides a cleaner and more readable alternative to the traditional for loop when you don’t need to track the index.
+
+ ### Syntax
+      for (type variable : collection) 
+      {
+    // Code to execute with each element
+      }
+
+### Example
+
+    int[] numbers = {1, 2, 3, 4, 5};
+  for (int num : numbers) 
+{
+    System.out.println(num);
+}
+### output
+    1
+    2
+    3
+    4
+    5
+
+# The break statement in loop 
+
+The Break Statement in Java is a control flow statement used to terminate loops and switch cases. As soon as the break statement is encountered from within a loop, the loop iterations stop there, and control returns from the loop immediately to the first statement after the loop.
+
+### Example:
+
+    import java.io.*;
+
+    class sample {
+  
+    public static void main (String[] args) 
+    {
+      
+      //assigning n as integer value
+      int n = 1;
+      
+      //passing n to switch
+      switch(n) {
+        case 1: 
+          System.out.println("first case");
+          break;
+        case 2:
+          System.out.println("Second Case");
+          break;
+        default:
+          System.out.println("default case");
+      }
+    }
+    }
+ ### output
+     first case
+
+# The continue statement in a loop 
+
+In Java, the continue statement is used inside the loops such as for, while, and do-while to skip the current iteration and move directly to the next iteration of the loop.   
+
+# Example:
+
+   public class Geeks
+   {
+    public static void main(String args[])
+    {      
+        // For loop for iteration
+        for (int i = 0; i <=5; i++)
+        {
+            // Check condition for continue
+          	// skip the execution of loop when i==3                  
+          	if (i == 3)
+                continue;
+          
+            System.out.print(i + " ");
+        }
+      }
+      }
+
+### output
+       0 1 2 4 5
+       
+# labeled loop
+
+a labeled loop is a loop that has a name (label) attached to it. Labels are used to control the flow of nested loops more precisely—especially when using break or continue. With a label, you can break out of or continue a specific outer loop instead of just the inner one.
+
+### Example
+
+    public class LabeledLoopExample {
+    public static void main(String[] args) {
+        outer:
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    break outer; // breaks out of both loops
+                }
+                System.out.println("i = " + i + ", j = " + j);
+            }
+        }
+    }
+    }
+### output
+
+     i = 1, j = 1
+     i = 1, j = 2
+     i = 1, j = 3
+     i = 2, j = 1
+
+     
+
+  
+
+   
+    
+
+
+    
+
+
+       
+      
+
+     
+
+
+
+
+
+  
+     
+
+     
+    
+  
+
+
+
+     
+
+
+
+
+
+
+
+
+
+   
+
+     
+
+
+
+    
+    
+
+
+
 
 
 
