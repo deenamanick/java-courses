@@ -213,6 +213,7 @@ else
 
 # if - else if - else statement
     the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
+    
 ### Syntax:
     if (condition1) 
     
@@ -355,10 +356,8 @@ Output :
    The day is: Invalid day
 
    ### 3 break statement in switch
-
     break means a statement to be able to appear in the case block, or default block of switch. 
     When meeting the break statement, the program will exit the switch.
-
 
 ![image](https://github.com/user-attachments/assets/284da333-5e38-4277-a0de-16090dab7a4d)
 
@@ -438,7 +437,6 @@ Ouput:
            
 ### 2.   for loop  
             A for loop is a control flow statement used to repeat a block of code a specific number of times
-            
             
           Statement 1 
           
