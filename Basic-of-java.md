@@ -589,22 +589,23 @@ In Java, the continue statement is used inside the loops such as for, while, and
 
 # Example:
 
-   public class Geeks
-   {
+      public class Geeks
+     {
     public static void main(String args[])
     {      
         // For loop for iteration
+        
         for (int i = 0; i <=5; i++)
         {
             // Check condition for continue
           	// skip the execution of loop when i==3                  
-          	if (i == 3)
+          	
+           if (i == 3)
                 continue;
-          
             System.out.print(i + " ");
         }
-      }
-      }
+       }
+       }
 
 ### output
        0 1 2 4 5
@@ -634,6 +635,100 @@ a labeled loop is a loop that has a name (label) attached to it. Labels are used
      i = 1, j = 2
      i = 1, j = 3
      i = 2, j = 1
+_____________________________________________________________________________________________
+
+# Chapter 6
+### Arrays in Java
+
+## What is Array
+
+an array is a container object that holds a fixed number of elements of the same data type. Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+![image](https://github.com/user-attachments/assets/1b3a7205-9fa3-443a-b0f1-19f51dd474bc)
+
+To declare an array, define the variable type with square brackets
+#### Systax
+   String[] cars;
+
+We have now declared a variable that holds an array of strings. To insert values to it, you can place the values in a comma-separated list, inside curly braces
+
+### syntax
+    
+   String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+To create an array of integers
+
+    int[] myNum = {10, 20, 30, 40};
+
+### Key Features of Arrays:
+
+1.Fixed size: Once created, its size can't be changed.
+
+2.Zero-based index: The first element is at index 0.
+
+3.Homogeneous: All elements must be of the same type.
+
+4.Indexed access: You can quickly access any element using its index.
+
+### Access the Elements of an Array
+
+    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+    System.out.println(cars[0]);
+
+  ### output:
+       Volvo
+
+### Change an Array Element
+
+To change the value of a specific element, refer to the index number:
+### Example
+    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+    cars[0] = "Audi";
+    System.out.println(cars[0]);
+
+### output:
+    Audi
+
+### Example
+
+      public class ArrayExample 
+      {
+      public static void main(String[] args) 
+      {
+        int[] marks = {90, 80, 70, 60};
+        for (int i = 0; i < marks.length; i++) 
+        {
+            System.out.println("Mark " + (i + 1) + ": " + marks[i]);
+        }
+     }
+    }
+ ### output:
+     Mark 1: 90
+     Mark 2: 80
+     Mark 3: 70
+     Mark 4: 60
+     
+
+     
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+     
 
      
 
