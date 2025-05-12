@@ -213,6 +213,7 @@ else
 
 # if - else if - else statement
     the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
+
     
 ### Syntax:
     if (condition1) 
@@ -242,6 +243,7 @@ else
 ![image](https://github.com/user-attachments/assets/90295ded-271e-464e-94a6-5c883177adb8)
 
 # Boolean value
+
   boolean is a data type, it only has two values true or false.
 
   This is useful to build logic, and find answers.
@@ -355,13 +357,12 @@ Output :
 
    The day is: Invalid day
 
+
    ### 3 break statement in switch
     break means a statement to be able to appear in the case block, or default block of switch. 
     When meeting the break statement, the program will exit the switch.
 
 ![image](https://github.com/user-attachments/assets/284da333-5e38-4277-a0de-16090dab7a4d)
-
-
 
   ### Example
 
@@ -428,15 +429,18 @@ Ouput:
 
 ##  1.  Loops in Java
 
-         In Java, loops are used to execute a block of code repeatedly under certain conditions. 
-         Java supports the following main types of loops
-    
-           1.for loop
-           2.while loop 
-           3.do-while loop
-           
+In Java, loops are used to execute a block of code repeatedly under certain conditions. 
+
+Java supports the following main types of loops
+
+1.for loop
+
+2.while loop 
+
+3.do-while loop
+      
 ### 2.   for loop  
-            A for loop is a control flow statement used to repeat a block of code a specific number of times
+A for loop is a control flow statement used to repeat a block of code a specific number of times
             
           Statement 1 
           
@@ -471,6 +475,9 @@ Ouput:
            Output:
 
               sum:55
+
+
+
 
               
 
