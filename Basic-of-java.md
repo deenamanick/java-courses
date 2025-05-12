@@ -689,6 +689,16 @@ To change the value of a specific element, refer to the index number:
 ### output:
     Audi
 
+# Array Length
+
+To find out how many elements an array has, use the length property:
+
+    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+    System.out.println(cars.length);
+    Outputs
+        
+        4
+
 ### Example
 
       public class ArrayExample 
