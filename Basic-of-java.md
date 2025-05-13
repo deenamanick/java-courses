@@ -757,35 +757,454 @@ ________________________________________________________________________________
 
 # Chapter 7 :
 ### Inheritance and polymorphism in Java
-1.Introduction 
-2.Class, Constructor and instance
-3.Inheritance in java
-4.Polymorphism in Java
+1.Class, Constructor and instance
 
-###  Introduction 
-Inheritance and polymorphism - this is a very important concept in Java. You must understand it better if you want to learn java.
+2.Inheritance in java
 
-### Class, Constructor and instance
+3.Polymorphism in Java
 
-Class is not a real-world entity. It is just a template or blueprint, or a prototype from which objects are created.
+
+### Class
+
+* Class is not a real-world entity. It is just a template or blueprint, or a prototype from which objects are created.
 Class does not occupy memory.
-A class is a group of variables of different data types and a group of methods.
-A Class in Java can contain:
-1.Data member
-2.Method
-3.Constructor
-4.Nested Class
-5.Interface
+* A class is a group of variables of different data types and a group of methods.
+* a class is a blueprint for creating objects
+* It defines a type by bundling data (fields/attributes) and methods (functions/behaviors) into a single unit.
+* A Class in Java can contain:
+  
+  1.Data member
+  
+  2.Method
+  
+  3.Constructor
+  
+  4.Nested Class
+  
+  5.Interface
 
 ### Class Declaration in Java
          access_modifier class <class_name> 
         {      
         data member;       
         method;       
-       constructor;     
-       nested class;     
-       interface;
+        constructor;     
+        nested class;     
+        interface;
         }
+
+ ### Example    
+     // Define the class
+     public class Person 
+     {
+    // Fields (variables)
+    String name;
+    int age;
+    // Method (function)
+    void sayHello() {
+    System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+    public class Main {
+    public static void main(String[] args)
+    {
+        // Create an object of Person
+        Person p1 = new Person();
+
+        // Set values
+        p1.name = "Arun";
+        p1.age = 25;
+
+        // Call the method
+        p1.sayHello();
+       }
+      }
+      }
+### output:
+     Hello, my name is Arun and I am 25 years old.
+
+### Constructors
+
+a constructor is a special method used to initialize objects when they are created.    
+### Characteristics of Constructors:
+* Same Name as the Class: A constructor has the same name as the class in which it is defined.
+* No Return Type:
+    Constructors do not have any return type, not even void. The main purpose of 
+    a constructor is to initialize the object, not to return a value.
+* Automatically Called on Object Creation:
+    When an object of a class is created, the constructor is called automatically to initialize 
+    the object’s attributes.
+  
+### Example
+    public class Person {
+    String name;
+    int age;
+
+    // Constructor
+    public Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Method
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+    }
+     public class Main {
+    public static void main(String[] args) {
+        // Constructor is called automatically
+        Person p1 = new Person("arun", 25);
+        p1.display(); 
+    }
+      }
+### output:
+     Name: arun, Age: 25
+
+# Inheritance
+Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
+It allows one class (called subclass or child class) to inherit the properties and behaviors (fields and methods) of another class (called superclass or parent class).
+
+### Syntax:
+     class Parent 
+     {
+    // fields and methods
+     }
+
+     class Child extends Parent 
+     {
+    // additional fields and methods
+     }
+## Types of Inheritance in Java
+     
+1.Single Inheritance
+
+2.Multilevel Inheritance
+
+3.Hierarchical Inheritance
+
+4.Multiple Inheritance
+
+5.Hybrid Inheritance
+
+### 1. Single Inheritance
+In single inheritance, a sub-class is derived from only one super class. It inherits the properties and behavior of a single-parent class. Sometimes, it is also known as simple inheritance. In the below figure, ‘A’ is a parent class and ‘B’ is a child class. The class ‘B’ inherits all the properties of the class ‘A’.
+
+![image](https://github.com/user-attachments/assets/5a41cd62-2bdc-4f71-bde3-e519e0b72ebb)
+
+### Example
+     // Parent class
+     class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+           }
+     }
+
+     // Child class
+     class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+    }
+
+     // Main class to test
+     public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();   // Inherited from Animal
+        d.bark();  // Defined in Dog
+         }
+      }
+  ### output:
+         This animal eats food.
+         The dog barks.
+         
+### 2.Multilevel Inheritance
+    
+In Multilevel Inheritance, a derived class will be inheriting a base class, and as well as the derived class also acts as the base class for other classes. In the below image, class A serves as a base class for the derived class B, which in turn serves as a base class for the derived class C. In Java, a class cannot directly access the grandparent’s members if they are private.
+
+### syntax:
+          class Grandparent 
+          {
+         // members
+          }
+
+        class Parent extends Grandparent 
+         {
+        // members
+         }
+
+        class Child extends Parent
+        {
+        // members
+        }
+
+
+![image](https://github.com/user-attachments/assets/ed909aa8-45c7-4290-a3f5-338f63ccb670)
+
+### Example:
+         // Grandparent class
+         class Animal {
+         void eat()
+         {
+        System.out.println("This animal eats food.");
+          }
+       }
+    // Parent class
+         class Dog extends Animal {
+          void bark() {
+        System.out.println("The dog barks.");
+       }
+      }
+
+     // Child class
+     class Puppy extends Dog {
+      void weep() {
+        System.out.println("The puppy weeps.");
+         }
+         }
+
+      // Main class to test
+     public class Main {
+    public static void main(String[] args) {
+        Puppy p = new Puppy();
+        p.eat();   // From Animal
+        p.bark();  // From Dog
+        p.weep();  // From Puppy
+    }
+     }
+### output:
+       This animal eats food.
+       The dog barks.
+       The puppy weeps.
+       
+### Hierarchical Inheritance
+
+In Hierarchical Inheritance, one class serves as a superclass (base class) for more than one subclass. In the below image, class A serves as a base class for the derived classes B, C, and D.
+
+### syntax:
+    class Parent
+    {
+    // members
+     }
+
+    class Child1 extends Parent 
+    {
+    // members
+    }
+
+    class Child2 extends Parent 
+    {
+    // members
+    }
+
+
+![image](https://github.com/user-attachments/assets/2a034fd4-257a-419a-927f-248484aa4ea4)
+
+###  Example:
+         // Parent class
+        class Animal {
+        void eat()
+        {
+        System.out.println("This animal eats food.");
+        }
+      }
+      // First child class
+      class Dog extends Animal {
+     void bark() {
+        System.out.println("The dog barks.");
+          }
+      }
+
+      // Second child class
+      class Cat extends Animal {
+      void meow() {
+        System.out.println("The cat meows.");
+       }
+     }
+
+      // Main class to test
+    public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();   // Inherited from Animal
+        d.bark();  // From Dog
+
+        Cat c = new Cat();
+        c.eat();   // Inherited from Animal
+        c.meow();  // From Cat
+    }
+    }
+
+### output:
+     
+    This animal eats food.
+    The dog barks.
+    This animal eats food.
+    The cat meows.
+
+### Multiple Inheritance
+
+In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes. Please note that Java does not support multiple inheritances with classes. In Java, we can achieve multiple inheritances only through Interfaces. In the image below, Class C is derived from interfaces A and B.
+
+### syntax:
+      interface Interface1
+     {
+      // method declarations
+      }
+
+      interface Interface2 
+      {
+    // method declarations
+      }
+
+      class ClassName implements Interface1, Interface2
+      {
+    // implementation of all interface methods
+       }
+
+
+![image](https://github.com/user-attachments/assets/3ccf2bec-5ffa-4960-ba71-b441c4b14c15)
+
+
+### Example:Multiple Inheritance using Interfaces
+     
+         // First interface
+         interface Flyable {
+         void fly();
+         }
+
+        // Second interface
+        interface Movable {
+        void move();
+        }
+
+        // Class implementing both interfaces
+        class Bird implements Flyable, Movable {
+        public void fly() {
+        System.out.println("The bird is flying.");
+        }
+
+        public void move() {
+        System.out.println("The bird is moving.");
+       }
+      }
+
+       // Main class
+         public class Main {
+         public static void main(String[] args) {
+            Bird b = new Bird();
+            b.fly();   // From Flyable
+            b.move();  // From Movable
+           }
+        }
+
+### output:
+     The bird is flying.
+     The bird is moving.
+
+###  Hybrid Inheritance
+
+Hybrid Inheritance is a combination of two or more types of inheritance 
+
+Single + Multiple
+
+Multilevel + Multiple
+
+Hierarchical + Interface-based multiple
+
+![image](https://github.com/user-attachments/assets/36e803c6-bd9b-4dc6-87dc-cbfaeeff4617)
+
+
+### syntax
+        interface InterfaceA {
+        void methodA();
+        }
+
+       interface InterfaceB {
+       void methodB();
+       }
+
+       class BaseClass {
+       void baseMethod() {
+        // code
+       }
+       }
+
+      // Hybrid: inherits from a class and implements multiple interfaces
+        class Derived extends BaseClass implements InterfaceA, InterfaceB {
+        public void methodA() {
+        // implementation
+       }
+
+        public void methodB() {
+        // implementation
+        }
+      }
+
+### Example:
+       // Interface 1: Flyable
+       interface Flyable {
+        void fly();
+       }
+
+      // Interface 2: Walkable
+      interface Walkable {
+      void walk();
+     }
+
+     // Parent class: Animal
+     class Animal {
+     void eat() {
+        System.out.println("This animal eats food.");
+           }
+      }
+       class Bird extends Animal implements Flyable, Walkable 
+      {
+        public void fly() {
+        System.out.println("The bird is flying.");
+         }
+        public void walk() {
+        System.out.println("The bird is walking.");
+          }
+        }
+        // Main class to test
+        public class Main
+        {
+        public static void main(String[] args) {
+        Bird bird = new Bird();
+        bird.eat();    // From Animal class
+        bird.fly();    // From Flyable interface
+        bird.walk();   // From Walkable interface
+           }
+        }
+   
+### output:
+     This animal eats food.
+     The bird is flying.
+     The bird is walking.
+
+
+
+
+
+
+
+
+
+
+   
+     
+     
+
+  
+
+  
+    
+    
+    
+
+
+        
 
    
 
