@@ -695,9 +695,8 @@ To find out how many elements an array has, use the length property:
 
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     System.out.println(cars.length);
-    Outputs
-        
-        4
+    Output:
+           4
 
 ### Example
 
@@ -717,6 +716,83 @@ To find out how many elements an array has, use the length property:
      Mark 2: 80
      Mark 3: 70
      Mark 4: 60
+
+# Types of Arrays in Java
+
+1. Single-Dimensional Arrays
+2. Multi-Dimensional Arrays
+
+## Single-Dimensional Array
+A linear array that stores elements in a single row (like a list)
+
+![image](https://github.com/user-attachments/assets/2cdc21b2-9943-4915-9425-7ee3064f9f03)
+
+
+### Syntax:
+      int[] numbers = new int[5];  // declares an array of 5 integers
+### Example:
+      int[] numbers = {10, 20, 30, 40, 50};
+      System.out.println(numbers[2]);  
+### Output:
+           30
+
+ ## Two-dimensional (2D) array:          
+Multidimensional arrays can be considered as an array of arrays or as a matrix consisting of rows and columns.
+
+![image](https://github.com/user-attachments/assets/e69a35ae-b3d4-4772-bc3b-50b2885ca10c)
+
+### Syntax 
+       data_type array_name[sizeof_1st_dimension][sizeof_2nd_dimension];
+
+### Example:
+            int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+            };
+            System.out.println(matrix[1][2]);  
+### Output: 
+            6
+_______________________________________________________________________________________________
+
+# Chapter 7 :
+### Inheritance and polymorphism in Java
+1.Introduction 
+2.Class, Constructor and instance
+3.Inheritance in java
+4.Polymorphism in Java
+
+###  Introduction 
+Inheritance and polymorphism - this is a very important concept in Java. You must understand it better if you want to learn java.
+
+### Class, Constructor and instance
+
+Class is not a real-world entity. It is just a template or blueprint, or a prototype from which objects are created.
+Class does not occupy memory.
+A class is a group of variables of different data types and a group of methods.
+A Class in Java can contain:
+1.Data member
+2.Method
+3.Constructor
+4.Nested Class
+5.Interface
+
+### Class Declaration in Java
+         access_modifier class <class_name> 
+        {      
+        data member;       
+        method;       
+       constructor;     
+       nested class;     
+       interface;
+        }
+
+   
+
+       
+
+ 
+   
      
 
      
