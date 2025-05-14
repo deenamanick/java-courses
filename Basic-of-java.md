@@ -43,9 +43,9 @@ JDK is necessary for programmers because Java Development Tools provides tools f
 ![image](https://github.com/user-attachments/assets/a9777a6e-7e8c-4d8a-a4f8-04046a24a1e9)
 
 ## Purpose of JDK:
-  * Write, compile, debug, and run Java applications.
+* Write, compile, debug, and run Java applications.
 
-  * Used by developers to build Java software for desktop, web, mobile, and enterprise environments.
+* Used by developers to build Java software for desktop, web, mobile, and enterprise environments.
 
 # Difference Between JDK and JRE
 ![image](https://github.com/user-attachments/assets/0672d744-ff67-4664-8bd5-1d354cacd382)   ____________________________________________________________________________________________________________________________________________________
@@ -64,13 +64,14 @@ JDK is necessary for programmers because Java Development Tools provides tools f
 ### 10 Reference Types
 
 ## 1 Overview of data types
-      Any programming language has a set of data types. Data types are basic, and quite similar for all languages. 
-      All data types are composed from bits.
 
-   Java has two types of data types:
+ Any programming language has a set of data types. Data types are basic, and quite similar for all languages. 
+ All data types are composed from bits.
+ 
+ Java has two types of data types:
    
-   * Primitive Types
-   * Non-Primitive
+* Primitive Types
+* Non-Primitive
 
 ![image](https://github.com/user-attachments/assets/60a488e8-86ea-4f30-ba71-1c974b09f942)
 
@@ -81,57 +82,78 @@ The byte data type is an 8-bit signed two’s complement integer. The byte data 
      byte byteVar;
      
 ## 3. boolean Data Type
-    The boolean data type represents a logical value that can be either true or false.
+The boolean data type represents a logical value that can be either true or false.
 
-    It plays a central role in decision-making processes, such as in if,while and for statements, and in logical operations.
+It plays a central role in decision-making processes, such as in if,while and for statements, and in logical operations.
+
 ### Syntax:
      boolean booleanVar;
+     
 ## 4.char
+
 Although "char" is the first four characters of the "Character" term, the char type in Java is used to store non-negative 
 integers with the two-byte size.It is also used to represent for a Unicode character because in nature, each character 
 corresponds to a specific number. 
 (This number is understood as the code of character.)
+
 ## Syntax:
    char charVar;
+   
 ## 5.short
-   short is data type for the purpose of representing a two-byte integer (16 bits), including negative integer.
+
+short is data type for the purpose of representing a two-byte integer (16 bits), including negative integer.
 
    The smallest value is -32,768 (-2^15) and the largest value is 32,767 (2^15 -1). Default value is 0.
    
 ## Syntax:
    short shortVar;
 ## 6.int 
-   int data type is used to represent an integer with the size of 4 bytes (32 bits).
 
-   The smallest value: -2,147,483,648 (-2^31)
+int data type is used to represent an integer with the size of 4 bytes (32 bits).
 
-   The largest value: 2,147,483,647 (2^31 -1) 
+The smallest value: -2,147,483,648 (-2^31)
 
-   Default value:0.
-   ## Syntax
+The largest value: 2,147,483,647 (2^31 -1) 
+
+Default value:0.
+
+ ## Syntax
+   
       int intVar;
+      
 ## 7.long
-    The long data type is a 64-bit signed two’s complement integer. It is used when an int is 
-    not large enough to hold a value, offering a much broader range.
+
+ The long data type is a 64-bit signed two’s complement integer. It is used when an int is 
+ not large enough to hold a value, offering a much broader range.
+ 
 ## Syntax
-   long longVar;
+
+    long longVar;
+    
 ## 8.float
-    The float data type is a single-precision 32-bit IEEE 754 floating-point. Use a float 
-    (instead of double) if you need to save memory in large arrays of floating-point numbers. 
-    The size of the float data type is 4 bytes (32 bits).
+
+The float data type is a single-precision 32-bit IEEE 754 floating-point. Use a float 
+if you need to save memory in large arrays of floating-point numbers. 
+The size of the float data type is 4 bytes (32 bits).
+
 ## sysntax
+
    float floatVar;
+   
 ## 9.Double
-     The double data type is a double-precision 64-bit IEEE 754 floating-point. For decimal 
-     values, this data type is generally the default choice. The size of the double data type 
-     is 8 bytes or 64 bits.
+
+The double data type is a double-precision 64-bit IEEE 754 floating-point. For decimal 
+values, this data type is generally the default choice. The size of the double data type 
+is 8 bytes or 64 bits.
+
 ## Syntax
-   double doubleVar;
+
+     double doubleVar;
 ________________________________________________________________________________________________________________________
  
   # Chapter 3 
 
-  ## if else statement in java
+  ##    if else statement in java
   
   ##    1.if statment
      
@@ -144,20 +166,21 @@ ________________________________________________________________________________
   ##   5. Operators involved in conditional expression
 
  ##  if statment
-     The if statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code 
-     only if a particular test evaluates to true.
+ 
+The if statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code 
+only if a particular test evaluates to true.
 
 ### Syntax:  
 
-  if(condition)
+    if(condition)
   
-{
+    {
 
-   // Statements to execute if
+    // Statements to execute if
    
-   // condition is true
+    // condition is true
    
-}
+    }
 
 ![image](https://github.com/user-attachments/assets/1822e6fe-d792-47b1-9cf2-1be078ae4184)
 
@@ -169,21 +192,22 @@ ________________________________________________________________________________
 
 ### Example:
 
-int num =3;
+        int num =3;
 
-if(num>0)
+        if(num>0)
 
-{
+        {
 
-System.out.print("The number is positive");
+        System.out.print("The number is positive");
 
-}
+        }
 
 Output:
 
-The number is positive
+       The number is positive
 
 # if - else statement
+
 The if-else statement in Java is a powerful decision-making tool used to control the program’s flow based on conditions. 
 It executes one block of code if a condition is true and another block if the condition is false.
 
@@ -191,28 +215,29 @@ It executes one block of code if a condition is true and another block if the co
 
      if (condition)
      
-{
+     {
    
     // Executes this block if
     
     // condition is true
 
-}
+    }
 
-else
+     else
 
-{
+     {
     
     // Executes this block if
     
     // condition is false
 
-}
+     }
 
 ![image](https://github.com/user-attachments/assets/200548e4-05b0-42c8-9411-759efd49cd97)
 
 # if - else if - else statement
-    the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
+
+the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
 
     
 ### Syntax:
@@ -222,88 +247,89 @@ else
     
     // code block for condition1
     
-} 
+    } 
 
-else if (condition2) 
+    else if (condition2) 
 
-{
+    {
     
     // code block for condition2
     
-} 
+    } 
 
-else 
+    else 
 
-{
+    {
     
     // code block if none of the above conditions are true
     
-}
+    }
 
 ![image](https://github.com/user-attachments/assets/90295ded-271e-464e-94a6-5c883177adb8)
 
 # Boolean value
 
-  boolean is a data type, it only has two values true or false.
+boolean is a data type, it only has two values true or false.
 
-  This is useful to build logic, and find answers.
+This is useful to build logic, and find answers.
 
-  For example, you can use a comparison operator, such as the greater than (>) operator, to find out if an expression is true or false
+For example, you can use a comparison operator, such as the greater than (>) operator, to find out if an expression is true or false
 
-  int x = 10;
+      int x = 10;
   
-  int y = 9;
+      int y = 9;
   
-  System.out.println(x > y); // returns true, because 10 is higher than 9
+      System.out.println(x > y); // returns true, because 10 is higher than 9
 
-  Output:
+      Output:
   
-       true
+          true
 _______________________________________________________________________________________________________________________________________
 
 # Chapter 4
 
 ## Switch Statement in Java
+
 ##               1.Structure of switch statement 
                
  ##              2.switch Example 
                
  ##              3.break statement in switch
 
-###  1    Structure of switch statement
+###  1.Structure of switch statement
      
-     switch(expression)   
-    {
+       switch(expression)   
+       {
     
-  case value1 :
+       case value1 :
+  
+       // Statements
+     
+        break; // break is optional
+  
+       case value2 :
   
      // Statements
      
      break; // break is optional
-  
-  case value2 :
-  
-     // Statements
-     
-     break; // break is optional
      ….
      ….
      ….
-   default :
+     default :
    
      // default Statement
      
-}
+     }
 
 ###  2.Switch Example
 
       public class SwitchWithoutBreak 
       
-      {
+         {
       
       public static void main(String[] args) 
       
-      {
+        {
        
         int day = 3;
         
@@ -311,7 +337,7 @@ ________________________________________________________________________________
 
         switch (day) 
         
-        {
+           {
             
             case 1:
                 
@@ -344,35 +370,37 @@ ________________________________________________________________________________
                
                 dayName = "Invalid day";
         
-        }
+           }
 
         
         System.out.println("The day is: " + dayName);
     
-    }
+           }
 
-}
+         }
 
-Output :
+     Output :
 
-   The day is: Invalid day
+        The day is: Invalid day
 
 
-   ### 3 break statement in switch
-    break means a statement to be able to appear in the case block, or default block of switch. 
-    When meeting the break statement, the program will exit the switch.
+### 3 break statement in switch
+
+break means a statement to be able to appear in the case block, or default block of switch.
+
+When meeting the break statement, the program will exit the switch.
 
 ![image](https://github.com/user-attachments/assets/284da333-5e38-4277-a0de-16090dab7a4d)
 
-  ### Example
+ ### Example
 
-   public class SwitchExample
+        public class SwitchExample
    
-   {
+       {
     
-    public static void main(String[] args) 
+       public static void main(String[] args) 
     
-    {
+       {
         
         int day = 3;
         
@@ -410,14 +438,18 @@ Output :
                 dayName = "Invalid day";
         }
 
-        System.out.println("The day is: " + dayName);
-    }
-}
+         System.out.println("The day is: " + dayName);
+        }
+        }
 
-Ouput:
-   The day is: Wednesday
+        Ouput:
+        
+         The day is: Wednesday
+         
+________________________________________________________________________________________________________________________________________________________________________
 
    # Chapter 5 
+   
   ### 1.Loops in Java 
   ### 2.for Loop 
   ### 3.for-each loop 
@@ -507,31 +539,38 @@ Once the condition becomes false, the line immediately after the loop in the pro
          5
 
 # do-While Loop
+
 In Java, a do-while loop is a control flow statement that executes a block of code at least once, and then repeatedly executes the block as long as the given condition is true.
+
 ### Syntax
-   do {
-    // Code to execute
-} while (condition);
+
+       do {
+          // Code to execute
+         } 
+       while (condition);
 
 ### Example
+
      int i = 1;
-do {
-    System.out.println("Value of i: " + i);
-    i++;
-} while (i <= 5);
+     do {
+      System.out.println("Value of i: " + i);
+      i++;
+      } while (i <= 5);
 
 ### output
-Value of i: 1
-Value of i: 2
-Value of i: 3
-Value of i: 4
-Value of i: 5
+
+       Value of i: 1
+       Value of i: 2
+       Value of i: 3
+       Value of i: 4
+       Value of i: 5
 
 # for-each loop
 
 a for-each loop (also called the enhanced for loop) is used to iterate over elements in arrays or collections like ArrayList, HashSet, etc.  It provides a cleaner and more readable alternative to the traditional for loop when you don’t need to track the index.
 
  ### Syntax
+ 
       for (type variable : collection) 
       {
     // Code to execute with each element
@@ -578,10 +617,11 @@ The Break Statement in Java is a control flow statement used to terminate loops 
           break;
         default:
           System.out.println("default case");
-      }
-    }
-    }
+        }
+         }
+        }
  ### output
+ 
      first case
 
 # The continue statement in a loop 
@@ -592,7 +632,7 @@ In Java, the continue statement is used inside the loops such as for, while, and
 
       public class Geeks
      {
-    public static void main(String args[])
+     public static void main(String args[])
     {      
         // For loop for iteration
         
@@ -609,6 +649,7 @@ In Java, the continue statement is used inside the loops such as for, while, and
        }
 
 ### output
+
        0 1 2 4 5
        
 # labeled loop
@@ -617,8 +658,8 @@ a labeled loop is a loop that has a name (label) attached to it. Labels are used
 
 ### Example
 
-    public class LabeledLoopExample {
-    public static void main(String[] args) {
+     public class LabeledLoopExample {
+     public static void main(String[] args) {
         outer:
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
@@ -628,8 +669,8 @@ a labeled loop is a loop that has a name (label) attached to it. Labels are used
                 System.out.println("i = " + i + ", j = " + j);
             }
         }
-    }
-    }
+        }
+       }
 ### output
 
      i = 1, j = 1
@@ -648,8 +689,10 @@ an array is a container object that holds a fixed number of elements of the same
 ![image](https://github.com/user-attachments/assets/1b3a7205-9fa3-443a-b0f1-19f51dd474bc)
 
 To declare an array, define the variable type with square brackets
+
 #### Systax
-   String[] cars;
+
+      String[] cars;
 
 We have now declared a variable that holds an array of strings. To insert values to it, you can place the values in a comma-separated list, inside curly braces
 
@@ -657,9 +700,9 @@ We have now declared a variable that holds an array of strings. To insert values
     
    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-To create an array of integers
+   To create an array of integers
 
-    int[] myNum = {10, 20, 30, 40};
+  int[] myNum = {10, 20, 30, 40};
 
 ### Key Features of Arrays:
 
@@ -677,11 +720,12 @@ To create an array of integers
     System.out.println(cars[0]);
 
   ### output:
-       Volvo
+        Volvo
 
 ### Change an Array Element
 
 To change the value of a specific element, refer to the index number:
+
 ### Example
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     cars[0] = "Audi";
@@ -696,6 +740,7 @@ To find out how many elements an array has, use the length property:
 
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     System.out.println(cars.length);
+    
     Output:
            4
 
@@ -710,9 +755,11 @@ To find out how many elements an array has, use the length property:
         {
             System.out.println("Mark " + (i + 1) + ": " + marks[i]);
         }
-     }
-    }
+          }
+        }
+        
  ### output:
+ 
      Mark 1: 90
      Mark 2: 80
      Mark 3: 70
@@ -730,11 +777,16 @@ A linear array that stores elements in a single row (like a list)
 
 
 ### Syntax:
+
       int[] numbers = new int[5];  // declares an array of 5 integers
+      
 ### Example:
+
       int[] numbers = {10, 20, 30, 40, 50};
       System.out.println(numbers[2]);  
+      
 ### Output:
+
            30
 
  ## Two-dimensional (2D) array:          
@@ -743,6 +795,7 @@ Multidimensional arrays can be considered as an array of arrays or as a matrix c
 ![image](https://github.com/user-attachments/assets/e69a35ae-b3d4-4772-bc3b-50b2885ca10c)
 
 ### Syntax 
+
        data_type array_name[sizeof_1st_dimension][sizeof_2nd_dimension];
 
 ### Example:
@@ -821,11 +874,13 @@ Class does not occupy memory.
       }
       }
 ### output:
+
      Hello, my name is Arun and I am 25 years old.
 
 ### Constructors
 
-a constructor is a special method used to initialize objects when they are created.    
+a constructor is a special method used to initialize objects when they are created. 
+
 ### Characteristics of Constructors:
 * Same Name as the Class: A constructor has the same name as the class in which it is defined.
 * No Return Type:
@@ -856,12 +911,14 @@ a constructor is a special method used to initialize objects when they are creat
         // Constructor is called automatically
         Person p1 = new Person("arun", 25);
         p1.display(); 
-    }
+     }
       }
 ### output:
+
      Name: arun, Age: 25
 
 # Inheritance
+
 Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
 It allows one class (called subclass or child class) to inherit the properties and behaviors (fields and methods) of another class (called superclass or parent class).
 
@@ -875,6 +932,7 @@ It allows one class (called subclass or child class) to inherit the properties a
      {
     // additional fields and methods
      }
+     
 ## Types of Inheritance in Java
      
 1.Single Inheritance
@@ -888,11 +946,13 @@ It allows one class (called subclass or child class) to inherit the properties a
 5.Hybrid Inheritance
 
 ### 1. Single Inheritance
+
 In single inheritance, a sub-class is derived from only one super class. It inherits the properties and behavior of a single-parent class. Sometimes, it is also known as simple inheritance. In the below figure, ‘A’ is a parent class and ‘B’ is a child class. The class ‘B’ inherits all the properties of the class ‘A’.
 
 ![image](https://github.com/user-attachments/assets/5a41cd62-2bdc-4f71-bde3-e519e0b72ebb)
 
 ### Example
+
      // Parent class
      class Animal {
     void eat() {
@@ -916,6 +976,7 @@ In single inheritance, a sub-class is derived from only one super class. It inhe
          }
       }
   ### output:
+  
          This animal eats food.
          The dog barks.
          
@@ -924,6 +985,7 @@ In single inheritance, a sub-class is derived from only one super class. It inhe
 In Multilevel Inheritance, a derived class will be inheriting a base class, and as well as the derived class also acts as the base class for other classes. In the below image, class A serves as a base class for the derived class B, which in turn serves as a base class for the derived class C. In Java, a class cannot directly access the grandparent’s members if they are private.
 
 ### syntax:
+
           class Grandparent 
           {
          // members
@@ -943,6 +1005,7 @@ In Multilevel Inheritance, a derived class will be inheriting a base class, and 
 ![image](https://github.com/user-attachments/assets/ed909aa8-45c7-4290-a3f5-338f63ccb670)
 
 ### Example:
+
          // Grandparent class
          class Animal {
          void eat()
@@ -966,14 +1029,15 @@ In Multilevel Inheritance, a derived class will be inheriting a base class, and 
 
       // Main class to test
      public class Main {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Puppy p = new Puppy();
         p.eat();   // From Animal
         p.bark();  // From Dog
         p.weep();  // From Puppy
-    }
+     }
      }
 ### output:
+
        This animal eats food.
        The dog barks.
        The puppy weeps.
@@ -1002,6 +1066,7 @@ In Hierarchical Inheritance, one class serves as a superclass (base class) for m
 ![image](https://github.com/user-attachments/assets/2a034fd4-257a-419a-927f-248484aa4ea4)
 
 ###  Example:
+
          // Parent class
         class Animal {
         void eat()
@@ -1048,6 +1113,7 @@ In Hierarchical Inheritance, one class serves as a superclass (base class) for m
 In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes. Please note that Java does not support multiple inheritances with classes. In Java, we can achieve multiple inheritances only through Interfaces. In the image below, Class C is derived from interfaces A and B.
 
 ### syntax:
+
       interface Interface1
      {
       // method declarations
@@ -1100,6 +1166,7 @@ In Multiple inheritances, one class can have more than one superclass and inheri
         }
 
 ### output:
+
      The bird is flying.
      The bird is moving.
 
@@ -1116,7 +1183,8 @@ Hierarchical + Interface-based multiple
 ![image](https://github.com/user-attachments/assets/36e803c6-bd9b-4dc6-87dc-cbfaeeff4617)
 
 
-### syntax
+### syntax:
+
         interface InterfaceA {
         void methodA();
         }
@@ -1143,6 +1211,7 @@ Hierarchical + Interface-based multiple
       }
 
 ### Example:
+
        // Interface 1: Flyable
        interface Flyable {
         void fly();
@@ -1180,6 +1249,7 @@ Hierarchical + Interface-based multiple
         }
    
 ### output:
+
      This animal eats food.
      The bird is flying.
      The bird is walking.
@@ -1210,15 +1280,15 @@ Compile-time polymorphism is achieved through method overloading, where multiple
         return a + b;
      }
      }
-
          public class Main {
          public static void main(String[] args) {
          Calculator calc = new Calculator();
         System.out.println("Sum of 2 ints: " + calc.add(10, 20));
         System.out.println("Sum of 3 ints: " + calc.add(10, 20, 30));
         System.out.println("Sum of 2 doubles: " + calc.add(10.5, 20.3));
-    }
-    }
+       }
+        }
+        
   ### output:
      
          Sum of 2 ints: 30
