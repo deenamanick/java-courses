@@ -1419,6 +1419,7 @@ When a class implements an interface, it agrees to provide implementations for a
 It has a single method:
 
       public void run();
+      
  ### Example 
       // Implementing the Runnable interface
       class MyTask implements Runnable 
@@ -1441,6 +1442,10 @@ It has a single method:
         thread.start();
     }
     }
+
+### output:
+         Thread is running: Thread-0
+
 
  
 
