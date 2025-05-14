@@ -540,10 +540,11 @@ a for-each loop (also called the enhanced for loop) is used to iterate over elem
 ### Example
 
     int[] numbers = {1, 2, 3, 4, 5};
-  for (int num : numbers) 
-{
+    for (int num : numbers) 
+    {
     System.out.println(num);
-}
+    }
+    
 ### output
     1
     2
