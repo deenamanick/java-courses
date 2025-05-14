@@ -35,7 +35,7 @@ written in the Java language.
 
 3.Other supporting files
 
-    * Configuration files, property files, fonts, etc.
+ * Configuration files, property files, fonts, etc.
 
 ## JDK ( Java Development Kit )   
 JDK is necessary for programmers because Java Development Tools provides tools for Java application development, such as Javac which compile the developer's source codes into Byte Codes, etc. then uses JRE to run the application during the development process.
@@ -1182,6 +1182,92 @@ Hierarchical + Interface-based multiple
      This animal eats food.
      The bird is flying.
      The bird is walking.
+
+### Polymorphism 
+
+Polymorphism in Java is one of the core concepts of object-oriented programming (OOP). It means "many forms", and it allows objects to be treated as instances of their parent class rather than their actual class. Polymorphism enables flexibility and reusability of code.   
+There are two main types of polymorphism in Java:
+
+1.Compile-Time Polymorphism (Static Binding)
+
+2.Run-Time Polymorphism (Dynamic Binding)
+
+### 1. Compile-Time Polymorphism (Static Binding) 
+
+Compile-time polymorphism is achieved through method overloading, where multiple methods have the same name but differ in number or type of parameters. The decision about which method to invoke is made at compile time by the compiler.
+
+### Example:
+    class Calculator {
+    int add(int a, int b) {
+        return a + b;
+      }
+    int add(int a, int b, int c) {
+        return a + b + c;
+     }
+
+    double add(double a, double b) {
+        return a + b;
+     }
+     }
+
+         public class Main {
+         public static void main(String[] args) {
+         Calculator calc = new Calculator();
+        System.out.println("Sum of 2 ints: " + calc.add(10, 20));
+        System.out.println("Sum of 3 ints: " + calc.add(10, 20, 30));
+        System.out.println("Sum of 2 doubles: " + calc.add(10.5, 20.3));
+    }
+    }
+  ### output:
+     
+         Sum of 2 ints: 30
+         Sum of 3 ints: 60
+         Sum of 2 doubles: 30.8
+         
+### 2.Run-Time Polymorphism (Dynamic Binding)
+
+Run-time polymorphism is achieved through method overriding. It allows a subclass to provide a specific implementation of a method already defined in its parent class. The method call is resolved at runtime, not at compile time.
+
+### Example:
+            class Animal {
+            void sound() {
+            System.out.println("Animal makes a sound");
+            }
+         }
+
+         class Dog extends Animal {
+         @Override
+        void sound() {
+        System.out.println("Dog barks");
+         }
+       }
+
+       class Cat extends Animal {
+       @Override
+       void sound() {
+        System.out.println("Cat meows");
+       }
+    }
+
+    public class Main {
+    public static void main(String[] args) {
+        Animal a;  // reference of parent class
+
+        a = new Dog();  // Dog object
+        a.sound();      // Output: Dog barks
+
+        a = new Cat();  // Cat object
+        a.sound();      // Output: Cat meows
+    }
+    }
+
+### output:
+
+       Dog barks
+       Cat meows
+
+
+
 
 
 
