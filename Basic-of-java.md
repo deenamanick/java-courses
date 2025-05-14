@@ -1265,6 +1265,188 @@ Run-time polymorphism is achieved through method overriding. It allows a subclas
 
        Dog barks
        Cat meows
+  ___________________________________________________________________________________________     
+# Chapter 8 
+
+### 1.Abstract Class 
+### 2.Abstract class, the examples
+### 3.Overview of the interface 
+### 4.Structure of an Interface
+### 5.Class implements Interface
+
+### 1. Abstract Class
+
+An abstract class in Java is a class that cannot be instantiated on its own and is designed to be inherited by other classes. It may contain abstract methods (without a body) and concrete methods (with implementations).
+
+### Syntax:
+     
+       abstract class Animal
+       {
+       abstract void sound(); // abstract method
+       void sleep() 
+       {         // concrete method
+        System.out.println("Animal is sleeping");
+       }
+      }
+      
+### Example:
+      abstract class Animal 
+      {
+      abstract void sound(); // abstract method
+
+     void sleep() {         // concrete method
+        System.out.println("Sleeping");
+       }
+     }
+
+    class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+    }
+
+    public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.sound();   
+        myDog.sleep();   
+      }
+      }
+      
+### output:
+     Dog barks
+     
+     Sleeping
+
+### Interface
+An interface is a completely "abstract class" that is used to group related methods with empty bodies
+It is used to achieve abstraction and multiple inheritance in Java.
+   
+### Syntax
+    interface Animal
+    {
+    void sound(); // abstract method
+     }
+
+### Example:
+         interface Animal 
+         {
+         void sound(); // abstract method
+         }
+
+         class Dog implements Animal {
+         public void sound()
+         {
+        System.out.println("Dog barks");
+          }
+          }
+
+        public class Main {
+        public static void main(String[] args)
+        {
+        Animal myDog = new Dog();
+        myDog.sound(); // Output: Dog barks
+       }
+       }
+
+  ### output
+  
+         Dog barks
+
+### Class Implements Interface
+   
+When a class implements an interface, it agrees to provide implementations for all of the abstract methods declared in the interface. This is a core part of achieving abstraction and polymorphism in Java.
+
+### Syntax:
+    interface InterfaceName
+    {
+    void method1();
+    void method2();
+    }
+
+   class ClassName implements InterfaceName
+   {
+    public void method1() 
+    {
+        // Implementation of method1
+    }
+
+    public void method2() 
+    {
+        // Implementation of method2
+     }
+    }
+    
+### Multiple Interface Implementation Example
+         
+        // Interface definition
+       interface Animal 
+       {
+        void sound();  // abstract method
+        void eat();    // abstract method
+       }
+
+       // Class implementing the interface
+       class Dog implements Animal {
+       public void sound() 
+       {
+        System.out.println("Dog barks");
+       }
+
+      public void eat()
+      {
+        System.out.println("Dog eats bones");
+      }
+    }
+
+    // Main class
+    public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog(); // interface reference to Dog object
+        myDog.sound();  // Calls Dog's implementation
+        myDog.eat();    // Calls Dog's implementation
+    }
+    }
+
+### output:
+    Dog barks
+    Dog eats bones
+ 
+ ### Class Implementing Runnable Interface
+ 
+ Runnable is a functional interface in Java used to define a task that can be executed by a thread.
+It has a single method:
+
+      public void run();
+ ### Example 
+      // Implementing the Runnable interface
+      class MyTask implements Runnable 
+      {
+      public void run() 
+      {
+        System.out.println("Thread is running: " + Thread.currentThread().getName());
+    }
+    }
+
+    public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Runnable implementation
+        MyTask task = new MyTask();
+
+        // Create a Thread object and pass the task to it
+        Thread thread = new Thread(task);
+
+        // Start the thread
+        thread.start();
+    }
+    }
+
+ 
+
+
+
+       
 
 
 
