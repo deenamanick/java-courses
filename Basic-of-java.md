@@ -1517,12 +1517,330 @@ It has a single method:
 ### output:
          Thread is running: Thread-0
 
+### Exception Handling 
 
+### Exception
+
+In Java, an exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. These exceptions can occur for various reasons, such as invalid user input, file not found, or division by zero. When an exception occurs, it is typically represented by an object of a subclass of the java.lang.Exception class.
+
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+### 1.The try-catch Block
+
+One of the primary mechanisms for handling exceptions in Java is the try-catch block. The try block contains the code that may throw an exception, and the catch block is used to handle the exception if it occurs.
+
+### Syntax:
+               try {  
+               
+                  // Code that may throw an exception  
+                  
+              } catch (ExceptionType e) { 
+              
+               // Exception handling code  
+               
+               }  
+
+ ### Exampple:
+
+         public class TryCatchExample {
+         public static void main(String[] args) {
+        try {
+            int result = 10 / 0;  // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero.");
+        }
+        }
+      }
+
+### output:
+      Cannot divide by zero.
+
+### 2. Multiple Catch Blocks
+
+Used to handle different types of exceptions separately.
+
+### Example
+
+       public class MultipleCatchExample {
+       public static void main(String[] args) {
+        try {
+            int[] arr = new int[5];
+            arr[10] = 25;  // ArrayIndexOutOfBoundsException
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Error");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index out of bounds");
+        } catch (Exception e) {
+            System.out.println("General exception");
+        }
+       }
+     }
+
+ ### output
  
+       Array index out of bounds
 
+### 3. Nested Try Block       
 
+A try block within another try block.
 
+### Example:
+
+         public class NestedTryExample {
+        public static void main(String[] args) {
+        try {
+            System.out.println("Outer try block");
+            try {
+                int a = 10 / 0;  // ArithmeticException
+            } catch (ArithmeticException e) {
+                System.out.println("Inner catch: " + e);
+            }
+        } catch (Exception e) {
+            System.out.println("Outer catch: " + e);
+        }
+       }
+     }
+
+ ### output:
+ 
+        Outer try block
+        Inner catch: java.lang.ArithmeticException: / by zero
+
+### 4. Finally Block
        
+Code inside the finally block always executes, whether or not an exception occurs.
+
+### Example:
+
+       public class FinallyExample {
+      public static void main(String[] args) {
+        try {
+            int data = 25 / 5;
+            System.out.println("Result: " + data);
+        } catch (NullPointerException e) {
+            System.out.println("Exception caught");
+        } finally {
+            System.out.println("This is the finally block");
+        }
+      }
+    }
+
+### output:
+
+        Result: 5
+        This is the finally block
+
+
+
+### 5. Throw Keyword
+
+       Used to explicitly throw an exception.
+
+### Example:
+
+        public class ThrowExample {
+        public static void main(String[] args) {
+        int age = 15;
+        if (age < 18) {
+            throw new ArithmeticException("Age must be 18 or above");
+        } else {
+            System.out.println("Eligible");
+        }
+       }
+      }
+
+ ### output:
+
+      Exception in thread "main" java.lang.ArithmeticException: Age must be 18 or above
+	   at ThrowExample.main(ThrowExample.java:5)
+
+
+### 6. Throws Keyword:
+
+Used to declare exceptions a method might throw.
+
+### Example
+
+     import java.io.*;
+     public class ThrowsExample {
+    static void readFile() throws IOException
+     {
+        FileReader fr = new FileReader("abc.txt");  // Checked exception
+     }
+
+     public static void main(String[] args) {
+        try {
+            readFile();
+        } catch (IOException e) {
+            System.out.println("Handled exception: " + e.getMessage());
+        }
+      }
+    }
+
+ ### output:
+ 
+         Handled exception: abc.txt (No such file or directory)
+
+
+### 7. Custom Exception
+
+You can define your own exception class
+
+### Example:
+
+        class MyException extends Exception {
+        public MyException(String message) {
+        super(message);
+        }
+      }
+       public class CustomExceptionExample {
+       static void validate(int age) throws MyException {
+        if (age < 18) {
+            throw new MyException("Custom Exception: Age must be 18 or above");
+        }
+       }  
+
+      public static void main(String[] args) {
+        try {
+            validate(16);
+        } catch (MyException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+      }
+     }
+
+### output:
+
+     Caught: Custom Exception: Age must be 18 or above
+
+### types of Exception
+
+### ArithmeticException occurs
+
+If we divide any number by zero, there occurs an ArithmeticException.
+
+int a=50/0;//ArithmeticException  
+
+### Example 
+
+        public class Main {    
+        public static void main(String[] args) {    
+        int dividend = 10;    
+        int divisor = 0;    
+        try {    
+            int result = dividend / divisor; // Division by zero    
+            System.out.println("Result: " + result);    
+        } catch (ArithmeticException e) {    
+            System.out.println("Error: Division by zero is not allowed.");    
+            // Additional error handling code can be added here    
+        }    
+        }    
+      }  
+
+### output:
+
+       Error: Division by zero is not allowed.
+       
+### ArrayIndexOutOfBoundsException occurs
+
+When an array exceeds to it's size, the ArrayIndexOutOfBoundsException occurs. there may be other reasons to occur ArrayIndexOutOfBoundsException.
+
+### Example
+
+         public class Main {    
+         public static void main(String[] args) {    
+        int[] numbers = {1, 2, 3, 4, 5}; // Initializing an array with 5 elements    
+        try {    
+            int index = 10; // Accessing an index that is out of bounds    
+            int value = numbers[index]; // Attempting to access an element at an invalid index    
+            System.out.println("Value at index " + index + ": " + value);    
+        } catch (ArrayIndexOutOfBoundsException e) {    
+            System.out.println("Error: Index is out of bounds.");    
+            // Additional error handling code can be added here    
+        }    
+      }    
+     }  
+     
+### output:
+
+      Error: Index is out of bounds.
+      
+### NullPointerException occurs
+
+If we have a null value in any variable, performing any operation on the variable throws a NullPointerException.   
+
+### Example:
+
+         public class Main {    
+         public static void main(String[] args) {    
+        String str = null; // Initializing a String variable to null    
+        try {    
+            int length = str.length(); // Attempting to call a method on a null reference    
+            System.out.println("Length of the string: " + length);    
+        } catch (NullPointerException e) {    
+            System.out.println("Error: Null reference encountered.");    
+            // Additional error handling code can be added here    
+        }    
+       }    
+      } 
+
+### output:
+
+        Error: Null reference encountered.
+
+### IOException   
+
+IOException is a checked exception in Java that occurs during input/output operations, like reading from a file, writing to a file, or working with streams.
+
+It belongs to the package: java.io
+
+It must be either handled with try-catch or declared using throws
+       
+#### Common Causes of IOException:
+
+Trying to read from or write to a file that does not exist
+
+Device failure (e.g., disk crash)
+
+Network issues during I/O
+
+File is being used by another process
+
+Incorrect file path
+
+### Example:
+
+     import java.io.*;
+     public class IOExceptionExample {
+      public static void main(String[] args) {
+        try {
+            // Attempting to read a file
+            BufferedReader reader = new BufferedReader(new FileReader("sample.txt"));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("An I/O error occurred: " + e.getMessage());
+        }
+       }
+      }
+### output:
+
+       An I/O error occurred: sample.txt (No such file or directory)
+
+
+      
+
+
+
+        
+
+
+
 
 
 
