@@ -1483,8 +1483,205 @@ When a class implements an interface, it agrees to provide implementations for a
 ### output:
     Dog barks
     Dog eats bones
+
+###   Threads
+
+Java threads are lightweight subprocesses, representing the smallest unit of execution with separate paths. The main advantage of multiple threads is efficiency (allowing multiple things at the same time)
+
+### Why Use Threads?
+* To perform multiple tasks simultaneously
+
+* To improve performance
+
+* Useful in scenarios like:
+
+1.Games
+2.Web servers
+3.Animations
+
+### Create Threads
+
+By Extending the Thread Class   
+
+    class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running...");
+    }
+      }
+
+    public class TestThread {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();  // Start the thread
+    }
+    }
+### output:
+      Thread is running...
+      
+### By Implementing the Runnable Interface
+
+      class MyRunnable implements Runnable {
+      public void run()
+      {
+        System.out.println("Runnable thread is running...");
+      }
+      }
+
+     public class TestRunnable {
+      public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+     }
+     }
+     
+### Output:
+         Runnable thread is running...
+
+### Multithreading
+
+Multithreading means running two or more threads simultaneously, each performing its task independently.
+
+it helps:
+
+*Increase performance
+
+*Run multiple operations concurrently
+
+*Utilize CPU cores efficiently
+
+### Example:
+         class MyThread1 extends Thread {
+         public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 1 - Count: " + i);
+            try {
+                Thread.sleep(500); // sleep for 0.5 second
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+           }
+        }
+       }
+
+         class MyThread2 extends Thread {
+         public void run() {
+         for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 2 - Count: " + i);
+            try {
+                Thread.sleep(500); // sleep for 0.5 second
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+           }
+        }
+      }
+
+        public class MultiThreadDemo {
+        public static void main(String[] args) {
+        MyThread1 t1 = new MyThread1();
+        MyThread2 t2 = new MyThread2();
+
+        t1.start(); // Start first thread
+        t2.start(); // Start second thread
+      }
+      }
+
+### output:
+        Thread 1 - Count: 1
+        Thread 2 - Count: 1
+        Thread 1 - Count: 2
+        Thread 2 - Count: 2
+        Thread 1 - Count: 3
+        Thread 2 - Count: 3
+        Thread 1 - Count: 4
+        Thread 2 - Count: 4
+        Thread 1 - Count: 5
+        Thread 2 - Count: 5
+
+
+### join() and sleep() in Threads
+
+### sleep() Method
+
+Pauses the current thread for a specified time (in milliseconds).
+
+### Syntax:
+
+     Thread.sleep(milliseconds);
+     
+### Example:
+
+     public class SleepExample {
+     public static void main(String[] args) {
+        try {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Count: " + i);
+                Thread.sleep(1000); // pause for 1 second
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        }
+     }
+### output:
+       Count: 1   ← after 1 sec
+       Count: 2   ← after 1 sec
+       Count: 3   ← after 1 sec
+       Count: 4   ← after 1 sec
+       Count: 5   ← after 1 sec
+
+ ### join() Method  
+
+ Tells one thread to wait for another thread to finish before continuing.
+
+ ### Syntax:
  
- ### Class Implementing Runnable Interface
+         thread.join();
+
+ ### Example:
+           class MyThread extends Thread {
+           public void run() {
+           for (int i = 1; i <= 3; i++) {
+            System.out.println(getName() + " - Count: " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+      }
+      }
+
+        public class JoinExample {
+        public static void main(String[] args)
+	{
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+
+        t1.setName("Thread A");
+        t2.setName("Thread B");
+
+        t1.start();
+        try {
+            t1.join(); // main waits for t1 to finish
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+
+        t2.start(); // t2 starts only after t1 completes
+        }
+       }
+       
+### Output:
+      
+         Thread A - Count: 1
+         Thread A - Count: 2
+         Thread A - Count: 3
+         Thread B - Count: 1
+         Thread B - Count: 2
+         Thread B - Count: 3
+	 
+  ### Class Implementing Runnable Interface
  
  Runnable is a functional interface in Java used to define a task that can be executed by a thread.
 It has a single method:
@@ -1831,6 +2028,8 @@ Incorrect file path
 ### output:
 
        An I/O error occurred: sample.txt (No such file or directory)
+
+       
 
 
       
