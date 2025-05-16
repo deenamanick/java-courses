@@ -1336,6 +1336,54 @@ Run-time polymorphism is achieved through method overriding. It allows a subclas
 
        Dog barks
        Cat meows
+
+###   Method Overriding    
+
+Method Overriding is when a subclass provides a specific implementation of a method that is already defined in its superclass.
+
+### syntax:
+
+         class Parent {
+         void display()
+	 {
+        System.out.println("Display from Parent");
+        }
+       }
+
+       class Child extends Parent {
+       @Override
+       void display()
+       {
+       System.out.println("Display from Child");
+     }
+        }
+	
+### Example:
+
+        class Animal {
+        void sound() {
+        System.out.println("Animal makes a sound");
+        }
+      }
+
+       class Dog extends Animal {
+       @Override
+       void sound() {
+       System.out.println("Dog barks");
+      }
+     }
+
+      public class OverrideExample {
+      public static void main(String[] args) {
+        Animal a = new Dog();  // upcasting
+        a.sound();             // Dog's sound() will be called
+       }
+    }
+    
+### output:
+
+         Dog barks
+
   ___________________________________________________________________________________________     
 # Chapter 8 
 
@@ -2111,6 +2159,57 @@ Delete	--->    Remove a file from the system
          Hello from Java!
          File handling is easy.
          This line was appended.
+	 
+  ### 4. Append to a File
+  
+                import java.io.FileWriter;
+                import java.io.IOException;
+                public class AppendToFile 
+		{
+                public static void main(String[] args) 
+		{
+                try
+		{
+               FileWriter writer = new FileWriter("testfile.txt", true); // true = append mode
+               writer.write("\nThis line was appended.");
+               writer.close();
+              System.out.println("Successfully appended to the file.");
+              } 
+	      catch (IOException e) 
+              {
+              System.out.println("An error occurred.");
+              }
+            }
+           }
+###  output:
+
+          Successfully appended to the file.
+
+
+  ###  5. Delete a File
+           
+             import java.io.File;
+             public class DeleteFile 
+	     {
+             public static void main(String[] args) 
+	     {
+            File file = new File("testfile.txt");
+           if (file.delete())
+	   {
+            System.out.println("Deleted the file: " + file.getName());
+           } else 
+	   {
+            System.out.println("Failed to delete the file.");
+        }
+         }
+       }
+
+ ### output:
+          Deleted the file: testfile.txt
+
+
+
+	 
 
            
 
