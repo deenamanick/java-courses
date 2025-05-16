@@ -1680,8 +1680,7 @@ Pauses the current thread for a specified time (in milliseconds).
          Thread B - Count: 1
          Thread B - Count: 2
          Thread B - Count: 3
-	 
-  ### Class Implementing Runnable Interface
+### Class Implementing Runnable Interface
  
  Runnable is a functional interface in Java used to define a task that can be executed by a thread.
 It has a single method:
@@ -2028,6 +2027,97 @@ Incorrect file path
 ### output:
 
        An I/O error occurred: sample.txt (No such file or directory)
+
+### File Handling
+
+File handling in Java refers to the process of creating, reading, writing, updating, and deleting files on your computer through a Java program.  
+
+### Common File Handling Operations
+
+Operation   	Purpose
+
+Create 	--->    Make a new file
+Write	--->    Add content to a file
+Read	--->    Get content from a file
+Append	--->    Add more content to existing file
+Delete	--->    Remove a file from the system
+
+### 1. Create a File
+
+            import java.io.File;
+            import java.io.IOException;
+            public class CreateFile {
+            public static void main(String[] args) {
+            try {
+            File file = new File("testfile.txt");
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+        }
+         }
+### output:
+
+       File created: testfile.txt
+       
+### 2. Write to a File
+         
+           import java.io.FileWriter;
+           import java.io.IOException;
+           public class WriteToFile {
+           public static void main(String[] args) {
+           try {
+            FileWriter writer = new FileWriter("testfile.txt");
+            writer.write("Hello from Java!\nFile handling is easy.");
+            writer.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+        }
+         }
+
+  ### output:
+  
+             Successfully wrote to the file.
+
+  ### 3.Read from a File
+
+           import java.io.File;
+           import java.io.FileNotFoundException;
+           import java.util.Scanner;
+           public class ReadFile {
+           public static void main(String[] args) {
+           try {
+            File file = new File("testfile.txt");
+            Scanner reader = new Scanner(file);
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                System.out.println(line);
+            }
+            reader.close();
+           } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+            }
+           }
+          }
+
+   ### Output:
+            
+         Hello from Java!
+         File handling is easy.
+         This line was appended.
+
+           
+
+
+
+
+       
 
        
 
