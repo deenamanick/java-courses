@@ -51,17 +51,16 @@ JDK is necessary for programmers because Java Development Tools provides tools f
 ![image](https://github.com/user-attachments/assets/0672d744-ff67-4664-8bd5-1d354cacd382)   ____________________________________________________________________________________________________________________________________________________
 # Chapter 2 :
 ## Data Types in java
-### 1	Overview of data types 
-
-### 2	byte 
-### 3	boolean 
-### 4	char     
-### 5	short     
-### 6	int   
-### 7	long    
-### 8	float 
-### 9	double 
-### 10 Reference Types
+### 1.Overview of data types 
+### 2.byte 
+### 3.boolean 
+### 4.char     
+### 5.short     
+### 6.int   
+### 7.long    
+### 8.float 
+### 9.double 
+### 10.Reference Types
 
 ## 1 Overview of data types
 
@@ -196,11 +195,11 @@ only if a particular test evaluates to true.
           {
             int num =3;
             if(num>0)
-          {
+            {
             System.out.print("The number is positive");
+            }
           }
-         }
-       }
+        }
 
 Output:
 
@@ -459,18 +458,17 @@ When meeting the break statement, the program will exit the switch.
          
 ________________________________________________________________________________________________________________________________________________________________________
 
-   # Chapter 5 
-   
-  ### 1.Loops in Java 
-  ### 2.for Loop 
-  ### 3.for-each loop 
-  ### 4.while Loop 
-###   5.do-while Loop 
-###   6.The break statement in loop 
-###   7.The continue statement in a loop 
-###   8.Labelled Loop
+# Chapter 5 
+### 1.Loops in Java 
+### 2.for Loop 
+### 3.for-each loop 
+### 4.while Loop 
+### 5.do-while Loop 
+### 6.The break statement in loop 
+### 7.The continue statement in a loop 
+### 8.Labelled Loop
 
-##  1.  Loops in Java
+## 1.Loops in Java
 
 In Java, loops are used to execute a block of code repeatedly under certain conditions. 
 
@@ -482,11 +480,11 @@ Java supports the following main types of loops
 
 3.do-while loop
       
-### 2.   for loop  
+### 2.for loop  
 A for loop is a control flow statement used to repeat a block of code a specific number of times
             
           Statement 1 
-          
+	  
               sets a variable before the loop starts (int i = 0).
 
           Statement 2 
@@ -501,23 +499,24 @@ A for loop is a control flow statement used to repeat a block of code a specific
           
              increases a value (i++) each time the code block in the loop has been executed.
 
-###  Example 
-              
-               public class Main 
-               {
-               public static void main(String[] args) 
-               {
+### Example:
+        public class exfor 
+	{
+             public static void main(String[] args) 
+             {
                  int sum = 0;
-                 for (int i = 1; i <= 10; i++) {
+                 for (int i = 1; i <= 10; i++) 
+		 {
                  sum += i;
-              }
+                 }
                  System.out.println("Sum: " + sum);
              }
-           }
+        }
+     
+### Output:
 
-           Output:
+![Screenshot 2025-05-20 165606](https://github.com/user-attachments/assets/9167ec8a-1da0-44b7-8df3-1762bdea91ba)
 
-              sum:55
 
 # While Loop
 
@@ -525,29 +524,22 @@ Java while loop is a control flow statement used to execute the block of stateme
 Once the condition becomes false, the line immediately after the loop in the program is executed.
 
 ### Example
-    public class WhileLoop {
-    public static void main(String[] args) {
-      
-      // Initialize the counter variable
-      int c = 1; 
-
-        // While loop to print numbers from 1 to 5
-        while (c <= 5) {
-          
-          System.out.println(c); 
-            
-          // Increment the counter
-          c++; 
+       public class exwhile 
+       {
+          public static void main(String[] args) 
+	  {
+            int c = 1; 
+            while (c <= 5) 
+	    {
+              System.out.println(c); 
+              c++; 
+            }
+          }
         }
-    }
-    }
+### output:
+  
+![Screenshot 2025-05-20 170539](https://github.com/user-attachments/assets/61e71369-8bd6-4fcc-a5d4-7fd4d9f3e2ed)
 
-  ### output
-         1
-         2
-         3
-         4
-         5
 
 # do-While Loop
 
@@ -557,24 +549,28 @@ In Java, a do-while loop is a control flow statement that executes a block of co
 
        do {
           // Code to execute
-         } 
+          } 
        while (condition);
 
-### Example
-
-     int i = 1;
-     do {
-      System.out.println("Value of i: " + i);
-      i++;
-      } while (i <= 5);
-
+### Example:
+       public class exdowhile 
+       {
+          public static void main(String[] args) 
+	  {
+             int i = 1;
+             do 
+	     {
+               System.out.println("Value of i: " + i);
+               i++;
+             } 
+             while (i <= 5);
+          }    
+        }
+	
 ### output
 
-       Value of i: 1
-       Value of i: 2
-       Value of i: 3
-       Value of i: 4
-       Value of i: 5
+![Screenshot 2025-05-20 170926](https://github.com/user-attachments/assets/9cc9c67b-7e3b-4f4b-8347-6b6e1a4b1055)
+
 
 # for-each loop
 
@@ -584,23 +580,26 @@ a for-each loop (also called the enhanced for loop) is used to iterate over elem
  
       for (type variable : collection) 
       {
-    // Code to execute with each element
+        // Code to execute with each element
       }
 
 ### Example
+       public class exforeach 
+       {
+          public static void main(String[] args)
+	  {
+            int[] numbers = {1, 2, 3, 4, 5};
+            for (int num : numbers) 
+            {
+              System.out.println(num);
+            }
+          }    
+        }
+  
+### output:
 
-    int[] numbers = {1, 2, 3, 4, 5};
-    for (int num : numbers) 
-    {
-    System.out.println(num);
-    }
-    
-### output
-    1
-    2
-    3
-    4
-    5
+![Screenshot 2025-05-20 171317](https://github.com/user-attachments/assets/8b7aabf7-3eb5-4579-8842-161c0354b3c9)
+
 
 # The break statement in loop 
 
