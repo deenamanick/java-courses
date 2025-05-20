@@ -152,20 +152,19 @@ is 8 bytes or 64 bits.
 ________________________________________________________________________________________________________________________
  
   # Chapter 3 
-
-  ##    if else statement in java
+## if else statement in java
   
-  ##    1.if statment
+##  1.if statment
      
-   ##  2. if - else statement
+##  2. if - else statement
      
-  ##   3. if - else if - else statement
+##  3. if - else if - else statement
      
-   ##  4. Boolean value
+##  4. Boolean value
      
-  ##   5. Operators involved in conditional expression
+##  5. Operators involved in conditional expression
 
- ##  if statment
+##  if statment
  
 The if statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code 
 only if a particular test evaluates to true.
@@ -191,20 +190,22 @@ only if a particular test evaluates to true.
 3	If the condition is false, the program will ignores the code in the if block and execute code snippets below the if block.
 
 ### Example:
-
-        int num =3;
-
-        if(num>0)
-
+        class conditionif
         {
-
-        System.out.print("The number is positive");
-
-        }
+          public static void main(String[] args) 
+          {
+            int num =3;
+            if(num>0)
+          {
+            System.out.print("The number is positive");
+          }
+         }
+       }
 
 Output:
 
-       The number is positive
+![Screenshot (58)](https://github.com/user-attachments/assets/fe4c43f5-b7c5-4ada-873e-0366f69c53de)
+
 
 # if - else statement
 
@@ -235,6 +236,28 @@ It executes one block of code if a condition is true and another block if the co
 
 ![image](https://github.com/user-attachments/assets/200548e4-05b0-42c8-9411-759efd49cd97)
 
+### Example
+         public class conditionifelse
+		{
+           		public static void main(String[] args) 
+			{
+        			int age = 18;
+        			if (age >= 18) 
+				{
+          			System.out.println("You are an adult.");
+        			} 
+				else 
+				{
+          			System.out.println("You are not an adult.");
+        			}
+        		}
+        	}
+	
+### output:
+
+![Screenshot 2025-05-20 153829](https://github.com/user-attachments/assets/22c00f8b-29a1-4b1d-8180-124aa8f602b2)
+
+    
 # if - else if - else statement
 
 the if-else if-else statement is used to execute different blocks of code based on multiple conditions.
@@ -267,6 +290,26 @@ the if-else if-else statement is used to execute different blocks of code based 
 
 ![image](https://github.com/user-attachments/assets/90295ded-271e-464e-94a6-5c883177adb8)
 
+
+### Example:
+      public class conditionelseif {
+          public static void main(String[] args) {
+              int marks = 75;
+              if (marks >= 90) {
+                  System.out.println("Grade: A");
+              } else if (marks >= 75) {
+                  System.out.println("Grade: B");
+              } else if (marks >= 50) {
+                  System.out.println("Grade: C");
+              } else {
+                  System.out.println("Grade: F");
+              }
+           }
+        }
+### output
+
+![Screenshot 2025-05-20 160334](https://github.com/user-attachments/assets/1ef197ba-792c-418d-a441-76fd82c0e368)
+
 # Boolean value
 
 boolean is a data type, it only has two values true or false.
@@ -275,113 +318,93 @@ This is useful to build logic, and find answers.
 
 For example, you can use a comparison operator, such as the greater than (>) operator, to find out if an expression is true or false
 
-      int x = 10;
+### Example
+     class exboolean
+     {
+         public static void main(String[] args)
+         {
+         int x = 10;
   
-      int y = 9;
+         int y = 9;
   
-      System.out.println(x > y); // returns true, because 10 is higher than 9
+         System.out.println(x > y); 
+      }
+    }
 
-      Output:
+### output:
   
-          true
+![Screenshot 2025-05-20 161120](https://github.com/user-attachments/assets/f1345a43-d294-4f3d-9d06-ff35e7311efd)
+
 _______________________________________________________________________________________________________________________________________
 
 # Chapter 4
 
 ## Switch Statement in Java
 
-##               1.Structure of switch statement 
+## 1.Structure of switch statement 
                
- ##              2.switch Example 
+## 2.switch Example 
                
- ##              3.break statement in switch
+## 3.break statement in switch
 
-###  1.Structure of switch statement
-     
+### 1.Structure of switch statement
+
+a switch statement (also called switch-case) is used to execute one block of code among many options based on the value of a variable.
+
+### Syntax     
        switch(expression)   
        {
-    
        case value1 :
-  
        // Statements
-     
-        break; // break is optional
-  
+       break; 
+       // break is optional
+       
        case value2 :
-  
-     // Statements
-     
-     break; // break is optional
-     ….
-     ….
-     ….
-     default :
-   
+       // Statements
+       break; 
+       // break is optional
+       ….
+       ….
+       ….
+       default :
      // default Statement
-     
-     }
+       }
 
 ###  2.Switch Example
-
-      public class SwitchWithoutBreak 
-      
-         {
-      
-      public static void main(String[] args) 
-      
-        {
-       
-        int day = 3;
-        
-        String dayName = "";
-
-        switch (day) 
-        
-           {
-            
-            case 1:
-                
-                dayName = "Monday";
-            
-            case 2:
-                
-                dayName = "Tuesday";
-            case 3:
-                
-                dayName = "Wednesday";
-            
-            case 4:
-                
-                dayName = "Thursday";
-            
-            case 5:
-                
-                dayName = "Friday";
-           
-            case 6:
-                
-                dayName = "Saturday";
-           
-            case 7:
-                
-                dayName = "Sunday";
-            
-            default:
-               
-                dayName = "Invalid day";
-        
-           }
-
-        
-        System.out.println("The day is: " + dayName);
+           public class exswitchcase
+	   {
+              public static void main(String[] args) 
+                {
+                 int day = 3;
+                 String dayName = "";
+                 switch (day) 
+                 {
+                   case 1:
+                   dayName = "Monday";
+                   case 2:
+                   dayName = "Tuesday";
+                   case 3:
+                   dayName = "Wednesday";
+                   case 4:
+                   dayName = "Thursday";
+                   case 5:   
+                   dayName = "Friday";
+                   case 6:
+                   dayName = "Saturday";
+                   case 7:  
+                   dayName = "Sunday";
+                   default:
+                   dayName = "Invalid day";
+                 }
+                   System.out.println("The day is: " + dayName);
+              }
     
            }
+ 
+### Output :
 
-         }
+![Screenshot 2025-05-20 163207](https://github.com/user-attachments/assets/c25c625a-f33f-4f8c-8626-81c303b527f0)
 
-     Output :
-
-        The day is: Invalid day
 
 
 ### 3 break statement in switch
@@ -393,58 +416,46 @@ When meeting the break statement, the program will exit the switch.
 ![image](https://github.com/user-attachments/assets/284da333-5e38-4277-a0de-16090dab7a4d)
 
  ### Example
-
         public class SwitchExample
-   
-       {
-    
-       public static void main(String[] args) 
-    
-       {
-        
-        int day = 3;
-        
-        String dayName;
-
-        switch (day) 
-        
         {
-           
-            case 1:
-                
-                dayName = "Monday";
-                
-                break;
-            
-            case 2:
-                dayName = "Tuesday";
-                break;
-            case 3:
-                dayName = "Wednesday";
-                break;
-            case 4:
-                dayName = "Thursday";
-                break;
-            case 5:
-                dayName = "Friday";
-                break;
-            case 6:
-                dayName = "Saturday";
-                break;
-            case 7:
-                dayName = "Sunday";
-                break;
-            default:
-                dayName = "Invalid day";
-        }
+            public static void main(String[] args) 
+            { 
+              int day = 3;
+              String dayName;
+              switch (day) 
+              { 
+                case 1:
+                 dayName = "Monday";
+                 break;
+                case 2:
+                 dayName = "Tuesday";
+                 break;
+                case 3:
+                 dayName = "Wednesday";
+                 break;
+                case 4:
+                 dayName = "Thursday";
+                 break;
+                case 5:
+                 dayName = "Friday";
+                 break;
+                case 6:
+                 dayName = "Saturday";
+                 break;
+                case 7:
+                 dayName = "Sunday";
+                 break;
+                default:
+                 dayName = "Invalid day";
+              }
+                System.out.println("The day is: " + dayName);
+             }
+          }
 
-         System.out.println("The day is: " + dayName);
-        }
-        }
-
-        Ouput:
+### Ouput:
         
-         The day is: Wednesday
+![Screenshot 2025-05-20 164448](https://github.com/user-attachments/assets/4e9f8de4-70ab-4d02-b5aa-c9ecf063ff45)
+
          
 ________________________________________________________________________________________________________________________________________________________________________
 
