@@ -606,87 +606,87 @@ a for-each loop (also called the enhanced for loop) is used to iterate over elem
 The Break Statement in Java is a control flow statement used to terminate loops and switch cases. As soon as the break statement is encountered from within a loop, the loop iterations stop there, and control returns from the loop immediately to the first statement after the loop.
 
 ### Example:
-
-    import java.io.*;
-
-    class sample {
-  
-    public static void main (String[] args) 
-    {
-      
-      //assigning n as integer value
-      int n = 1;
-      
-      //passing n to switch
-      switch(n) {
-        case 1: 
-          System.out.println("first case");
-          break;
-        case 2:
-          System.out.println("Second Case");
-          break;
-        default:
-          System.out.println("default case");
-        }
+       import java.io.*;
+       class sample
+       {
+          public static void main (String[] args) 
+          {
+             //assigning n as integer value
+             int n = 1;
+            //passing n to switch
+            switch(n) 
+	    {
+              case 1: 
+              System.out.println("first case");
+              break;
+              case 2:
+              System.out.println("Second Case");
+              break;
+              default:
+              System.out.println("default case");
+            }
+           }
          }
-        }
- ### output
+	 
+ ### output:
  
-     first case
+ ![Screenshot 2025-05-22 111706](https://github.com/user-attachments/assets/4affa952-ddad-4b1e-be3a-b18cac62ffb8)
+
 
 # The continue statement in a loop 
 
 In Java, the continue statement is used inside the loops such as for, while, and do-while to skip the current iteration and move directly to the next iteration of the loop.   
 
 # Example:
-
-      public class Geeks
+     public class excontinue
      {
-     public static void main(String args[])
-    {      
-        // For loop for iteration
-        
-        for (int i = 0; i <=5; i++)
-        {
-            // Check condition for continue
+        public static void main(String args[])
+        {      
+            // For loop for iteration
+            for (int i = 0; i <=5; i++)
+            {
+                // Check condition for continue
           	// skip the execution of loop when i==3                  
-          	
-           if (i == 3)
+                if (i == 3)
                 continue;
-            System.out.print(i + " ");
-        }
-       }
-       }
+                System.out.print(i + " ");
+             }
+          }
+      }
 
-### output
+### output:
 
-       0 1 2 4 5
+![Screenshot 2025-05-22 112703](https://github.com/user-attachments/assets/e056f1fd-315a-48c8-96dc-0dbed3f28860)
+
        
 # labeled loop
 
 a labeled loop is a loop that has a name (label) attached to it. Labels are used to control the flow of nested loops more precisely—especially when using break or continue. With a label, you can break out of or continue a specific outer loop instead of just the inner one.
 
 ### Example
-
-     public class LabeledLoopExample {
-     public static void main(String[] args) {
-        outer:
-        for (int i = 1; i <= 3; i++) {
-            for (int j = 1; j <= 3; j++) {
-                if (i == 2 && j == 2) {
-                    break outer; // breaks out of both loops
+       public class LabeledLoopExample 
+       {
+           public static void main(String[] args) 
+	   {
+              outer:
+              for (int i = 1; i <= 3; i++) 
+	      {
+                 for (int j = 1; j <= 3; j++) 
+		 {
+                    if (i == 2 && j == 2) 
+		    {
+                       break outer; // breaks out of both loops
+                    }
+                       System.out.println("i = " + i + ", j = " + j);
+                  }
                 }
-                System.out.println("i = " + i + ", j = " + j);
-            }
-        }
-        }
-       }
+             }
+          }
+	  
 ### output
 
-     i = 1, j = 1
-     i = 1, j = 2
-     i = 1, j = 3
-     i = 2, j = 1
+![Screenshot 2025-05-22 113307](https://github.com/user-attachments/assets/e397126b-9b59-4b6c-94b5-d04b41d2c7f2)
+
 _____________________________________________________________________________________________
 
 # Chapter 6
@@ -725,55 +725,74 @@ We have now declared a variable that holds an array of strings. To insert values
 4.Indexed access: You can quickly access any element using its index.
 
 ### Access the Elements of an Array
-
-    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-    System.out.println(cars[0]);
-
+         public class exarrary 
+	 {
+             public static void main(String[] args) 
+	     {
+                String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+                System.out.println(cars[0]);   
+              }
+          }
+	 
   ### output:
-        Volvo
+  
+  ![Screenshot 2025-05-22 113758](https://github.com/user-attachments/assets/34b8c901-5adf-4601-bfa1-8ebff5d0fbe6)
+
 
 ### Change an Array Element
 
 To change the value of a specific element, refer to the index number:
 
 ### Example
-    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-    cars[0] = "Audi";
-    System.out.println(cars[0]);
-
+       public class exchangearray 
+       {
+           public static void main(String[] args) 
+	   {
+               String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+               cars[0] = "Audi";
+               System.out.println(cars[0]);
+           }
+        }
+	
 ### output:
-    Audi
+
+![Screenshot 2025-05-22 114101](https://github.com/user-attachments/assets/8aa476e2-85ed-4d2f-bcf8-eabf19a7ccfa)
+
 
 # Array Length
 
 To find out how many elements an array has, use the length property:
+### Example:
+       public class exarrlen 
+       {
+           public static void main(String[] args) 
+	   {
+              String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+              System.out.println(cars.length);
+	    }
+         }
+	 
+###  Output:
 
-    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-    System.out.println(cars.length);
-    
-    Output:
-           4
+![Screenshot 2025-05-22 114400](https://github.com/user-attachments/assets/1b0bd9b6-e595-4665-9056-f248b4beef15)
+
 
 ### Example
-
       public class ArrayExample 
       {
-      public static void main(String[] args) 
-      {
-        int[] marks = {90, 80, 70, 60};
-        for (int i = 0; i < marks.length; i++) 
-        {
-            System.out.println("Mark " + (i + 1) + ": " + marks[i]);
-        }
-          }
+           public static void main(String[] args) 
+           {
+              int[] marks = {90, 80, 70, 60};
+              for (int i = 0; i < marks.length; i++) 
+              {
+                 System.out.println("Mark " + (i + 1) + ": " + marks[i]);
+               }
+            }
         }
         
  ### output:
  
-     Mark 1: 90
-     Mark 2: 80
-     Mark 3: 70
-     Mark 4: 60
+![Screenshot 2025-05-22 114821](https://github.com/user-attachments/assets/15a379cd-4c50-4a52-ac9c-d19131860724)
 
 # Types of Arrays in Java
 
@@ -791,13 +810,20 @@ A linear array that stores elements in a single row (like a list)
       int[] numbers = new int[5];  // declares an array of 5 integers
       
 ### Example:
+      public class exarrsingle
+      {
+          public static void main(String[] args)
+	  {
+             int[] numbers = {10, 20, 30, 40, 50};
+             System.out.println(numbers[2]); 
+          }
+	}
 
-      int[] numbers = {10, 20, 30, 40, 50};
-      System.out.println(numbers[2]);  
       
 ### Output:
 
-           30
+![Screenshot 2025-05-22 115140](https://github.com/user-attachments/assets/da0ffe7c-c222-49c3-b396-54d27563f229)
+
 
  ## Two-dimensional (2D) array:          
 Multidimensional arrays can be considered as an array of arrays or as a matrix consisting of rows and columns.
@@ -809,14 +835,19 @@ Multidimensional arrays can be considered as an array of arrays or as a matrix c
        data_type array_name[sizeof_1st_dimension][sizeof_2nd_dimension];
 
 ### Example:
-            int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-            };
-            System.out.println(matrix[1][2]);  
+       public class exarrtwodimensional 
+       {
+           public static void main(String[] args) 
+	   {
+                int[][] matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+                System.out.println(matrix[1][2]);  
+            }
+         }
+
 ### Output: 
-            6
+
+![Screenshot 2025-05-22 115628](https://github.com/user-attachments/assets/d8b9a4c6-3720-462a-a1d6-4b69ca3e51e1)
+
 _______________________________________________________________________________________________
 
 # Chapter 7 :
@@ -858,34 +889,36 @@ Class does not occupy memory.
         }
 
  ### Example    
-     // Define the class
-     public class Person 
-     {
-    // Fields (variables)
-    String name;
-    int age;
-    // Method (function)
-    void sayHello() {
-    System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
-    }
-    public class Main {
-    public static void main(String[] args)
-    {
-        // Create an object of Person
-        Person p1 = new Person();
-
-        // Set values
-        p1.name = "Arun";
-        p1.age = 25;
-
-        // Call the method
-        p1.sayHello();
-       }
-      }
-      }
+         // Define the class
+         public class Person 
+         {
+            // Fields (variables)
+            String name;
+            int age;
+            // Method (function)
+            void sayHello()
+	    {
+              System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+            }
+            public class Main 
+	    {
+               public static void main(String[] args)
+               {
+                   // Create an object of Person
+                   Person p1 = new Person();
+                   // Set values
+                   p1.name = "Arun";
+                   p1.age = 25;
+                   // Call the method
+        	   p1.sayHello();
+	        }
+             }
+           }
+	   
 ### output:
 
-     Hello, my name is Arun and I am 25 years old.
+![Screenshot 2025-05-22 120552](https://github.com/user-attachments/assets/a4763623-925a-4e90-b726-cc8d5cc1529d)
+
 
 ### Constructors
 
