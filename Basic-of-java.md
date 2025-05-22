@@ -933,32 +933,33 @@ a constructor is a special method used to initialize objects when they are creat
     When an object of a class is created, the constructor is called automatically to initialize 
     the object’s attributes.
   
-### Example
-    public class Person {
-    String name;
-    int age;
+### Example   
+       class person
+       {
+          String name;
+          int age;
+          // Constructor
+          public person (String n, int a) 
+          {
+             name = n;
+             age = a;
+          }
+          // Method
+          void display()
+          {
+             System.out.println("Name: " + name + ", Age: " + age);
+          }
+          public static void main(String[] args)
+          {
+              // Constructor is called automatically
+              person p1 = new person("arun", 25);
+              p1.display(); 
+          }
+        }
 
-    // Constructor
-    public Person(String n, int a) {
-        name = n;
-        age = a;
-    }
-
-    // Method
-    void display() {
-        System.out.println("Name: " + name + ", Age: " + age);
-    }
-    }
-     public class Main {
-    public static void main(String[] args) {
-        // Constructor is called automatically
-        Person p1 = new Person("arun", 25);
-        p1.display(); 
-     }
-      }
 ### output:
 
-     Name: arun, Age: 25
+![Screenshot 2025-05-22 120552](https://github.com/user-attachments/assets/aeb7d7da-dfef-4dca-97a7-a7c172018a7b)
 
 # Inheritance
 
@@ -968,12 +969,11 @@ It allows one class (called subclass or child class) to inherit the properties a
 ### Syntax:
      class Parent 
      {
-    // fields and methods
+       // fields and methods
      }
-
      class Child extends Parent 
      {
-    // additional fields and methods
+        // additional fields and methods
      }
      
 ## Types of Inheritance in Java
