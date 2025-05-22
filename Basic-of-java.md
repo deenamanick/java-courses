@@ -727,8 +727,8 @@ We have now declared a variable that holds an array of strings. To insert values
 ### Access the Elements of an Array
          public class exarrary 
 	 {
-             public static void main(String[] args) 
-	     {
+              public static void main(String[] args) 
+	      {
                 String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
                 System.out.println(cars[0]);   
               }
@@ -746,12 +746,12 @@ To change the value of a specific element, refer to the index number:
 ### Example
        public class exchangearray 
        {
-           public static void main(String[] args) 
-	   {
+            public static void main(String[] args) 
+	    {
                String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
                cars[0] = "Audi";
                System.out.println(cars[0]);
-           }
+            }
         }
 	
 ### output:
@@ -765,8 +765,8 @@ To find out how many elements an array has, use the length property:
 ### Example:
        public class exarrlen 
        {
-           public static void main(String[] args) 
-	   {
+            public static void main(String[] args) 
+	    {
               String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
               System.out.println(cars.length);
 	    }
@@ -780,8 +780,8 @@ To find out how many elements an array has, use the length property:
 ### Example
       public class ArrayExample 
       {
-           public static void main(String[] args) 
-           {
+            public static void main(String[] args) 
+            {
               int[] marks = {90, 80, 70, 60};
               for (int i = 0; i < marks.length; i++) 
               {
@@ -810,8 +810,8 @@ A linear array that stores elements in a single row (like a list)
       int[] numbers = new int[5];  // declares an array of 5 integers
       
 ### Example:
-      public class exarrsingle
-      {
+       public class exarrsingle
+       {
           public static void main(String[] args)
 	  {
              int[] numbers = {10, 20, 30, 40, 50};
@@ -835,10 +835,10 @@ Multidimensional arrays can be considered as an array of arrays or as a matrix c
        data_type array_name[sizeof_1st_dimension][sizeof_2nd_dimension];
 
 ### Example:
-       public class exarrtwodimensional 
-       {
-           public static void main(String[] args) 
-	   {
+        public class exarrtwodimensional 
+        {
+            public static void main(String[] args) 
+	    {
                 int[][] matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
                 System.out.println(matrix[1][2]);  
             }
@@ -879,7 +879,7 @@ Class does not occupy memory.
   5.Interface
 
 ### Class Declaration in Java
-         access_modifier class <class_name> 
+        access_modifier class <class_name> 
         {      
         data member;       
         method;       
@@ -995,161 +995,145 @@ In single inheritance, a sub-class is derived from only one super class. It inhe
 ![image](https://github.com/user-attachments/assets/5a41cd62-2bdc-4f71-bde3-e519e0b72ebb)
 
 ### Example
-
-     // Parent class
-     class Animal {
-    void eat() {
-        System.out.println("This animal eats food.");
-           }
-     }
-
-     // Child class
-     class Dog extends Animal {
-    void bark() {
-        System.out.println("The dog barks.");
-    }
-    }
-
-     // Main class to test
-     public class Main {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat();   // Inherited from Animal
-        d.bark();  // Defined in Dog
+        class exsingleinher 
+        {
+            void display()
+            {
+               System.out.println("parent class");
+            }
+        }
+        class sample extends exsingleinher
+        {
+            void dis() 
+	    {
+               System.out.println("Child class");
+            }
+        public static void main(String[] args)
+        {
+            sample d = new sample();
+            d.display();   
+            d.dis();       
          }
-      }
+       }
+    
   ### output:
-  
-         This animal eats food.
-         The dog barks.
+
+  ![Screenshot 2025-05-22 154933](https://github.com/user-attachments/assets/eb3705b5-a3d9-4042-b06b-290d9c7b477d)
+
          
 ### 2.Multilevel Inheritance
     
 In Multilevel Inheritance, a derived class will be inheriting a base class, and as well as the derived class also acts as the base class for other classes. In the below image, class A serves as a base class for the derived class B, which in turn serves as a base class for the derived class C. In Java, a class cannot directly access the grandparent’s members if they are private.
 
 ### syntax:
-
           class Grandparent 
           {
-         // members
+              // members
           }
-
-        class Parent extends Grandparent 
-         {
-        // members
-         }
-
-        class Child extends Parent
-        {
-        // members
-        }
-
+          class Parent extends Grandparent 
+          {
+             // members
+          }
+          class Child extends Parent
+          {
+            // members
+          }
 
 ![image](https://github.com/user-attachments/assets/ed909aa8-45c7-4290-a3f5-338f63ccb670)
 
 ### Example:
+        public class exmultiinher
+	{
+            void display()
+            {
+              System.out.println("welcome to java");
+            }
+        }
+        // Parent class
+        class sample1 extends exmultiinher 
+	{
+            void display1() 
+	    {
+              System.out.println("this is sample1 class");
+            }
+         }
 
-         // Grandparent class
-         class Animal {
-         void eat()
-         {
-        System.out.println("This animal eats food.");
-          }
-       }
-    // Parent class
-         class Dog extends Animal {
-          void bark() {
-        System.out.println("The dog barks.");
-       }
+        // Child class
+        class sample2 extends sample1 
+	{
+           void display2() 
+	   {
+              System.out.println("this is sample2 class");
+           }
+        public static void main(String[] args) 
+	{
+           sample2 p = new sample2();
+           p.display();   
+           p.display1();  
+           p.display2();  
+         }
       }
 
-     // Child class
-     class Puppy extends Dog {
-      void weep() {
-        System.out.println("The puppy weeps.");
-         }
-         }
-
-      // Main class to test
-     public class Main {
-     public static void main(String[] args) {
-        Puppy p = new Puppy();
-        p.eat();   // From Animal
-        p.bark();  // From Dog
-        p.weep();  // From Puppy
-     }
-     }
 ### output:
 
-       This animal eats food.
-       The dog barks.
-       The puppy weeps.
-       
+![Screenshot 2025-05-22 160017](https://github.com/user-attachments/assets/448a4eee-2782-4495-9d0e-1eab45f9c6af)
+
 ### Hierarchical Inheritance
 
-In Hierarchical Inheritance, one class serves as a superclass (base class) for more than one subclass. In the below image, class A serves as a base class for the derived classes B, C, and D.
+In Hierarchical Inheritance, one class serves as a superclass (base class) for more than one subclass. In the below syntax, class A serves as a base class for the derived classes B, C, and D.
 
 ### syntax:
     class Parent
     {
-    // members
-     }
-
+       // members
+    }
     class Child1 extends Parent 
     {
-    // members
+       // members
     }
-
     class Child2 extends Parent 
     {
-    // members
+       // members
     }
-
-
+    
 ![image](https://github.com/user-attachments/assets/2a034fd4-257a-419a-927f-248484aa4ea4)
 
 ###  Example:
-
-         // Parent class
-        class Animal {
-        void eat()
-        {
-        System.out.println("This animal eats food.");
-        }
-      }
-      // First child class
-      class Dog extends Animal {
-     void bark() {
-        System.out.println("The dog barks.");
+         public class exhierinher 
+	 {
+             void display1()
+             {
+                System.out.println("welcome to java");
+             }
           }
-      }
-
-      // Second child class
-      class Cat extends Animal {
-      void meow() {
-        System.out.println("The cat meows.");
-       }
-     }
-
-      // Main class to test
-    public class Main {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat();   // Inherited from Animal
-        d.bark();  // From Dog
-
-        Cat c = new Cat();
-        c.eat();   // Inherited from Animal
-        c.meow();  // From Cat
-    }
-    }
+          class sample1 extends exhierinher
+          {
+              void display2() 
+	      {
+                System.out.println("this is sample1 class");
+              }
+          }
+          class sample2 extends exhierinher 
+	  {
+              void display3() 
+	      {
+                System.out.println("this is sample2 class");
+              }
+          public static void main(String[] args)
+	  {
+              sample1 d = new sample1();
+              d.display1();   
+              d.display2();  
+              sample2 c = new sample2();
+              c.display1();   
+              c.display3();  
+           }
+        }
 
 ### output:
-     
-    This animal eats food.
-    The dog barks.
-    This animal eats food.
-    The cat meows.
+
+![Screenshot 2025-05-22 161733](https://github.com/user-attachments/assets/8bcde7a1-a071-422d-9fa1-964a9f2b5f77)
+
 
 ### Multiple Inheritance
 
@@ -1158,60 +1142,53 @@ In Multiple inheritances, one class can have more than one superclass and inheri
 ### syntax:
 
       interface Interface1
-     {
-      // method declarations
+      {
+         // method declarations
       }
-
       interface Interface2 
       {
-    // method declarations
+        // method declarations
       }
-
       class ClassName implements Interface1, Interface2
       {
-    // implementation of all interface methods
-       }
+        // implementation of all interface methods
+      }
 
 
 ![image](https://github.com/user-attachments/assets/3ccf2bec-5ffa-4960-ba71-b441c4b14c15)
 
 
 ### Example:Multiple Inheritance using Interfaces
-     
-         // First interface
-         interface Flyable {
-         void fly();
+         interface exmultipleinher 
+         {
+             void fly();
          }
+         interface Movable
+         {
+            void move();
+         }
+         class Bird implements exmultipleinher, Movable 
+	 {
+            public void fly() 
+            {
+                System.out.println("The bird is flying.");
+            }
 
-        // Second interface
-        interface Movable {
-        void move();
+            public void move() 
+            {
+                System.out.println("The bird is moving.");
+            }
+         public static void main(String[] args) 
+	 {
+               Bird b = new Bird();
+               b.fly();   
+               b.move();  
+         }
         }
-
-        // Class implementing both interfaces
-        class Bird implements Flyable, Movable {
-        public void fly() {
-        System.out.println("The bird is flying.");
-        }
-
-        public void move() {
-        System.out.println("The bird is moving.");
-       }
-      }
-
-       // Main class
-         public class Main {
-         public static void main(String[] args) {
-            Bird b = new Bird();
-            b.fly();   // From Flyable
-            b.move();  // From Movable
-           }
-        }
-
+         
 ### output:
 
-     The bird is flying.
-     The bird is moving.
+![Screenshot 2025-05-22 163208](https://github.com/user-attachments/assets/6e7ade40-9803-4042-b4c1-b3314a650d4b)
 
 ###  Hybrid Inheritance
 
@@ -1228,74 +1205,72 @@ Hierarchical + Interface-based multiple
 
 ### syntax:
 
-        interface InterfaceA {
-        void methodA();
+        interface InterfaceA
+	{
+           void methodA();
         }
-
-       interface InterfaceB {
-       void methodB();
+        interface InterfaceB 
+	{
+          void methodB();
+        }
+        class BaseClass 
+	{
+        void baseMethod() 
+       {
+          // code
        }
-
-       class BaseClass {
-       void baseMethod() {
-        // code
        }
-       }
-
-      // Hybrid: inherits from a class and implements multiple interfaces
-        class Derived extends BaseClass implements InterfaceA, InterfaceB {
-        public void methodA() {
-        // implementation
-       }
-
-        public void methodB() {
-        // implementation
+       // Hybrid: inherits from a class and implements multiple interfaces
+       class Derived extends BaseClass implements InterfaceA, InterfaceB
+	{
+        public void methodA() 
+	{
+          // implementation
+        }
+        public void methodB() 
+	{
+           // implementation
         }
       }
 
 ### Example:
-
-       // Interface 1: Flyable
-       interface Flyable {
-        void fly();
-       }
-
-      // Interface 2: Walkable
-      interface Walkable {
-      void walk();
-     }
-
-     // Parent class: Animal
-     class Animal {
-     void eat() {
-        System.out.println("This animal eats food.");
-           }
-      }
-       class Bird extends Animal implements Flyable, Walkable 
-      {
-        public void fly() {
-        System.out.println("The bird is flying.");
+         interface exhybirdinher 
+         {
+            void fly();
          }
-        public void walk() {
-        System.out.println("The bird is walking.");
-          }
-        }
-        // Main class to test
-        public class Main
-        {
-        public static void main(String[] args) {
-        Bird bird = new Bird();
-        bird.eat();    // From Animal class
-        bird.fly();    // From Flyable interface
-        bird.walk();   // From Walkable interface
+         interface Walkable
+         {
+            void walk();
+	 }
+         class sample 
+	 {
+            void dis() 
+	    {
+              System.out.println("this is sample class");
            }
+         }
+         class Bird extends sample implements exhybirdinher, Walkable 
+         {
+             public void fly() 
+             {
+                System.out.println("The bird is flying.");
+             }
+             public void walk() 
+             {
+                System.out.println("The bird is walking.");
+             }
+         public static void main(String[] args)
+         {
+                Bird bird = new Bird();
+                bird.dis();    
+                bird.fly();    
+                bird.walk();   
+         }
         }
    
 ### output:
 
-     This animal eats food.
-     The bird is flying.
-     The bird is walking.
+![Screenshot 2025-05-22 165825](https://github.com/user-attachments/assets/c8ee6ecb-fb53-4f8b-a775-e59de103636a)
 
 ### Polymorphism 
 
