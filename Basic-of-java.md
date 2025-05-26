@@ -1286,123 +1286,125 @@ There are two main types of polymorphism in Java:
 Compile-time polymorphism is achieved through method overloading, where multiple methods have the same name but differ in number or type of parameters. The decision about which method to invoke is made at compile time by the compiler.
 
 ### Example:
-    class Calculator {
-    int add(int a, int b) {
-        return a + b;
-      }
-    int add(int a, int b, int c) {
-        return a + b + c;
-     }
-
-    double add(double a, double b) {
-        return a + b;
-     }
-     }
-         public class Main {
-         public static void main(String[] args) {
-         Calculator calc = new Calculator();
-        System.out.println("Sum of 2 ints: " + calc.add(10, 20));
-        System.out.println("Sum of 3 ints: " + calc.add(10, 20, 30));
-        System.out.println("Sum of 2 doubles: " + calc.add(10.5, 20.3));
-       }
+        public class expolymorphism
+        {
+            int add(int a, int b) 
+	    {
+               return a + b;
+            }
+            int add(int a, int b, int c) 
+	    {
+               return a + b + c;
+            }
+            double add(double a, double b) 
+            {
+               return a + b;
+            }
+        public static void main(String[] args) 
+        {
+              expolymorphism calc = new expolymorphism();
+              System.out.println("Sum of 2 ints: " + calc.add(10, 20));
+              System.out.println("Sum of 3 ints: " + calc.add(10, 20, 30));
+              System.out.println("Sum of 2 doubles: " + calc.add(10.5, 20.3)); 
         }
-        
+       }
+       
   ### output:
-     
-         Sum of 2 ints: 30
-         Sum of 3 ints: 60
-         Sum of 2 doubles: 30.8
+  
+![Screenshot 2025-05-26 111951](https://github.com/user-attachments/assets/5e2e1244-2564-4497-a0b8-aa99e4118705)
          
 ### 2.Run-Time Polymorphism (Dynamic Binding)
 
 Run-time polymorphism is achieved through method overriding. It allows a subclass to provide a specific implementation of a method already defined in its parent class. The method call is resolved at runtime, not at compile time.
 
 ### Example:
-            class Animal {
-            void sound() {
-            System.out.println("Animal makes a sound");
+       class exruntimepoly 
+       {
+            void sound()
+            {
+               System.out.println("Animal makes a sound");
             }
-         }
+        }
+        class Dog extends exruntimepoly 
+	{
+            @Override
+            void sound() 
+            {
+                System.out.println("Dog barks");
+            }
+        }
+        class Cat extends exruntimepoly
+        {
+            @Override
+            void sound() 
+            {
+                System.out.println("Cat meows");
+            }
+        public static void main(String[] args) 
+        {
+              exruntimepoly a=new exruntimepoly();  
+              a.sound();
 
-         class Dog extends Animal {
-         @Override
-        void sound() {
-        System.out.println("Dog barks");
-         }
-       }
+              a = new Dog();  
+              a.sound();      
 
-       class Cat extends Animal {
-       @Override
-       void sound() {
-        System.out.println("Cat meows");
-       }
-    }
-
-    public class Main {
-    public static void main(String[] args) {
-        Animal a;  // reference of parent class
-
-        a = new Dog();  // Dog object
-        a.sound();      // Output: Dog barks
-
-        a = new Cat();  // Cat object
-        a.sound();      // Output: Cat meows
-    }
-    }
+              a = new Cat();  
+              a.sound();  
+        }
+       }     
 
 ### output:
 
-       Dog barks
-       Cat meows
+![Screenshot 2025-05-26 113616](https://github.com/user-attachments/assets/1597573d-4544-473f-9016-c81237b56023)
 
-###   Method Overriding    
+### Method Overriding    
 
 Method Overriding is when a subclass provides a specific implementation of a method that is already defined in its superclass.
 
 ### syntax:
-
-         class Parent {
-         void display()
+         class Parent 
 	 {
-        System.out.println("Display from Parent");
-        }
-       }
-
-       class Child extends Parent {
-       @Override
-       void display()
-       {
-       System.out.println("Display from Child");
-     }
-        }
+            void display()
+	    {
+              System.out.println("Display from Parent");
+            }
+         }
+        class Child extends Parent 
+	{
+            @Override
+            void display()
+            {
+             System.out.println("Display from Child");
+            }
+         }
 	
 ### Example:
-
-        class Animal {
-        void sound() {
-        System.out.println("Animal makes a sound");
+        public class exmethodoverriding 
+	{
+             void display() 
+             {
+                 System.out.println("this is class1 method");
+             }
         }
-      }
-
-       class Dog extends Animal {
-       @Override
-       void sound() {
-       System.out.println("Dog barks");
-      }
-     }
-
-      public class OverrideExample {
-      public static void main(String[] args) {
-        Animal a = new Dog();  // upcasting
-        a.sound();             // Dog's sound() will be called
-       }
-    }
-    
+        class sample1 extends exmethodoverriding
+        {
+           @Override
+           void display() 
+           {
+               System.out.println("this is class2 method");
+           }
+        public static void main(String[] args) 
+        {
+              exmethodoverriding a = new sample1();  
+              a.display();             
+        }
+        }
+	
 ### output:
 
-         Dog barks
+![Screenshot 2025-05-26 115212](https://github.com/user-attachments/assets/c107c98f-471f-451c-946b-0ab975bc8bbf)
 
-  ___________________________________________________________________________________________     
+ ___________________________________________________________________________________________     
 # Chapter 8 
 
 ### 1.Abstract Class 
@@ -1419,77 +1421,73 @@ An abstract class in Java is a class that cannot be instantiated on its own and 
      
        abstract class Animal
        {
-       abstract void sound(); // abstract method
-       void sleep() 
-       {         // concrete method
-        System.out.println("Animal is sleeping");
+          abstract void sound(); // abstract method
+          void sleep() 
+          {   
+	      // concrete method
+              System.out.println("Animal is sleeping");
+          }
        }
-      }
       
 ### Example:
-      abstract class Animal 
+      abstract class exabstract 
       {
-      abstract void sound(); // abstract method
-
-     void sleep() {         // concrete method
-        System.out.println("Sleeping");
-       }
-     }
-
-    class Dog extends Animal {
-    @Override
-    void sound() {
-        System.out.println("Dog barks");
-    }
-    }
-
-    public class Main {
-    public static void main(String[] args) {
-        Animal myDog = new Dog();
-        myDog.sound();   
-        myDog.sleep();   
+          abstract void display(); 
+          void abstr() 
+          {         
+             System.out.println("this is ");
+          }
+      }
+      class sample extends exabstract 
+      {
+         @Override
+         void display() 
+         {
+            System.out.println("abstract class definition");
+         }
+      public static void main(String[] args) 
+      {
+         exabstract obj = new sample();
+         obj.abstr();
+         obj.display(); 
       }
       }
-      
+        
 ### output:
-     Dog barks
-     
-     Sleeping
+
+![Screenshot 2025-05-26 121633](https://github.com/user-attachments/assets/89014dd6-1982-4c43-ac29-870b3b16da2b)
 
 ### Interface
 An interface is a completely "abstract class" that is used to group related methods with empty bodies
 It is used to achieve abstraction and multiple inheritance in Java.
    
 ### Syntax
-    interface Animal
-    {
-    void sound(); // abstract method
-     }
+      interface Animal
+      {
+        void sound(); // abstract method
+      }
 
-### Example:
-         interface Animal 
-         {
-         void sound(); // abstract method
-         }
-
-         class Dog implements Animal {
-         public void sound()
-         {
-        System.out.println("Dog barks");
-          }
-          }
-
-        public class Main {
+### Example:   
+        interface exinterface 
+        {
+             void display(); 
+        }
+        class sample implements exinterface 
+        {
+             public void display()
+             {
+                System.out.println("this is the example of interface");
+             } 
         public static void main(String[] args)
         {
-        Animal myDog = new Dog();
-        myDog.sound(); // Output: Dog barks
+             exinterface obj = new sample();
+             obj.display(); 
+        }
        }
-       }
-
-  ### output
+       
+  ### output:
   
-         Dog barks
+![Screenshot 2025-05-26 122616](https://github.com/user-attachments/assets/4460e9d5-e917-4f02-8c64-54682953dc58)
 
 ### Class Implements Interface
    
@@ -1498,59 +1496,50 @@ When a class implements an interface, it agrees to provide implementations for a
 ### Syntax:
     interface InterfaceName
     {
-    void method1();
-    void method2();
+       void method1();
+       void method2();
     }
-
-   class ClassName implements InterfaceName
-   {
-    public void method1() 
+    class ClassName implements InterfaceName
     {
-        // Implementation of method1
-    }
-
-    public void method2() 
-    {
-        // Implementation of method2
+       public void method1() 
+       {
+         // Implementation of method1
+       }
+       public void method2() 
+       {
+         // Implementation of method2
+       }
      }
-    }
     
 ### Multiple Interface Implementation Example
-         
-        // Interface definition
-       interface Animal 
-       {
-        void sound();  // abstract method
-        void eat();    // abstract method
+         interface exinterfacemultiple 
+         {
+            void sound();  
+            void eat();    
+         }
+         class sample implements exinterfacemultiple
+         {
+            public void sound() 
+            {
+              System.out.println("Dog barks");
+            }
+         public void eat()
+         {
+            System.out.println("Dog eats bones");
+         }
+         public static void main(String[] args) 
+	 {
+            exinterfacemultiple myDog = new sample(); 
+            myDog.sound();  
+            myDog.eat();  
+         }
        }
-
-       // Class implementing the interface
-       class Dog implements Animal {
-       public void sound() 
-       {
-        System.out.println("Dog barks");
-       }
-
-      public void eat()
-      {
-        System.out.println("Dog eats bones");
-      }
-    }
-
-    // Main class
-    public class Main {
-    public static void main(String[] args) {
-        Animal myDog = new Dog(); // interface reference to Dog object
-        myDog.sound();  // Calls Dog's implementation
-        myDog.eat();    // Calls Dog's implementation
-    }
-    }
-
+       
 ### output:
-    Dog barks
-    Dog eats bones
 
-###   Threads
+![Screenshot 2025-05-26 123649](https://github.com/user-attachments/assets/0e5bc5f2-0de1-46b8-9a57-73d8eea59084)
+
+### Threads
 
 Java threads are lightweight subprocesses, representing the smallest unit of execution with separate paths. The main advantage of multiple threads is efficiency (allowing multiple things at the same time)
 
@@ -1567,41 +1556,43 @@ Java threads are lightweight subprocesses, representing the smallest unit of exe
 
 ### Create Threads
 
-By Extending the Thread Class   
+By Extending the Thread Class  
 
-    class MyThread extends Thread {
-    public void run() {
-        System.out.println("Thread is running...");
-    }
+     class exthread extends Thread 
+     {
+         public void run() 
+         {
+           System.out.println("Thread is running...");
+         }    
+     public static void main(String[] args)
+     {
+         exthread t1 = new exthread();
+         t1.start();  // Start the thread
       }
-
-    public class TestThread {
-    public static void main(String[] args) {
-        MyThread t1 = new MyThread();
-        t1.start();  // Start the thread
     }
-    }
+    
 ### output:
-      Thread is running...
+
+![Screenshot 2025-05-26 124403](https://github.com/user-attachments/assets/3abede2e-b2cc-40d8-b759-014ed70bdb21)
+
       
 ### By Implementing the Runnable Interface
-
-      class MyRunnable implements Runnable {
-      public void run()
-      {
-        System.out.println("Runnable thread is running...");
-      }
-      }
-
-     public class TestRunnable {
-      public static void main(String[] args) {
-        Thread t1 = new Thread(new MyRunnable());
-        t1.start();
-     }
-     }
-     
+          public class exrunnable implements Runnable 
+          {
+              public void run()
+              {
+                  System.out.println("Runnable thread is running...");
+               } 
+          public static void main(String[] args) 
+          {
+              Thread t1 = new Thread(new exrunnable());
+              t1.start();
+          }
+         } 
+       
 ### Output:
-         Runnable thread is running...
+
+![Screenshot 2025-05-26 124857](https://github.com/user-attachments/assets/fb287b35-2a56-4175-b2b7-c0356b613f2e)
 
 ### Multithreading
 
@@ -1616,53 +1607,53 @@ it helps:
 *Utilize CPU cores efficiently
 
 ### Example:
-         class MyThread1 extends Thread {
-         public void run() {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Thread 1 - Count: " + i);
-            try {
-                Thread.sleep(500); // sleep for 0.5 second
-            } catch (InterruptedException e) {
-                System.out.println(e);
+       class exmultithread extends Thread
+       {
+            public void run() 
+            {
+                for (int i = 1; i <= 5; i++) 
+                {
+                     System.out.println("Thread 1 - Count: " + i);
+                     try 
+                     {
+                        Thread.sleep(500); // sleep for 0.5 second
+                     } 
+                     catch (InterruptedException e) 
+                     {
+                        System.out.println(e);
+                     }
+                }
             }
-           }
         }
-       }
-
-         class MyThread2 extends Thread {
-         public void run() {
-         for (int i = 1; i <= 5; i++) {
-            System.out.println("Thread 2 - Count: " + i);
-            try {
-                Thread.sleep(500); // sleep for 0.5 second
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
-           }
+        class MyThread2 extends exmultithread
+        {
+              public void run() 
+              {
+                 for (int i = 1; i <= 5; i++)
+                 {
+                     System.out.println("Thread 2 - Count: " + i);
+                     try 
+                     {
+                        Thread.sleep(500); // sleep for 0.5 second
+                     } 
+                     catch (InterruptedException e) 
+                     {
+                         System.out.println(e);
+                     }
+                  }
+               }
+        public static void main(String[] args) 
+	{
+              exmultithread t1 = new exmultithread();
+              MyThread2 t2 = new MyThread2();
+              t1.start(); // Start first thread
+              t2.start(); // Start second thread
         }
-      }
-
-        public class MultiThreadDemo {
-        public static void main(String[] args) {
-        MyThread1 t1 = new MyThread1();
-        MyThread2 t2 = new MyThread2();
-
-        t1.start(); // Start first thread
-        t2.start(); // Start second thread
-      }
       }
 
 ### output:
-        Thread 1 - Count: 1
-        Thread 2 - Count: 1
-        Thread 1 - Count: 2
-        Thread 2 - Count: 2
-        Thread 1 - Count: 3
-        Thread 2 - Count: 3
-        Thread 1 - Count: 4
-        Thread 2 - Count: 4
-        Thread 1 - Count: 5
-        Thread 2 - Count: 5
+
+![Screenshot 2025-05-26 130102](https://github.com/user-attachments/assets/4c07cc1a-9650-4890-b917-49daaca163bf)
 
 
 ### join() and sleep() in Threads
@@ -1746,6 +1737,7 @@ Pauses the current thread for a specified time (in milliseconds).
          Thread B - Count: 1
          Thread B - Count: 2
          Thread B - Count: 3
+	 
 ### Class Implementing Runnable Interface
  
  Runnable is a functional interface in Java used to define a task that can be executed by a thread.
