@@ -1667,25 +1667,28 @@ Pauses the current thread for a specified time (in milliseconds).
      Thread.sleep(milliseconds);
      
 ### Example:
-
-     public class SleepExample {
-     public static void main(String[] args) {
-        try {
-            for (int i = 1; i <= 5; i++) {
+        public class exthreadsleep
+        {
+        public static void main(String[] args) 
+        {
+             try 
+	     {
+                for (int i = 1; i <= 5; i++) 
+                {
                 System.out.println("Count: " + i);
                 Thread.sleep(1000); // pause for 1 second
-            }
-        } catch (InterruptedException e) {
-            System.out.println(e);
-        }
-        }
-     }
+                }
+             } 
+	     catch (InterruptedException e) 
+             {
+               System.out.println(e);
+             }
+         }
+       }
+     
 ### output:
-       Count: 1   ← after 1 sec
-       Count: 2   ← after 1 sec
-       Count: 3   ← after 1 sec
-       Count: 4   ← after 1 sec
-       Count: 5   ← after 1 sec
+
+![Screenshot 2025-05-26 150409](https://github.com/user-attachments/assets/a5d8acc1-a516-4c75-b561-173b17522170)
 
  ### join() Method  
 
@@ -1696,80 +1699,79 @@ Pauses the current thread for a specified time (in milliseconds).
          thread.join();
 
  ### Example:
-           class MyThread extends Thread {
-           public void run() {
-           for (int i = 1; i <= 3; i++) {
-            System.out.println(getName() + " - Count: " + i);
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
-        }
-      }
-      }
-
-        public class JoinExample {
+        class exthreadjoin extends Thread 
+        {
+            public void run() 
+            {
+                for (int i = 1; i <= 3; i++) 
+                {
+                   System.out.println(getName() + " - Count: " + i);
+                   try 
+                   {
+                      Thread.sleep(500);
+                   } 
+                   catch (InterruptedException e) 
+                   {
+                      System.out.println(e);
+                   }
+                }
+             }
         public static void main(String[] args)
 	{
-        MyThread t1 = new MyThread();
-        MyThread t2 = new MyThread();
+               exthreadjoin t1 = new exthreadjoin();
+               exthreadjoin t2 = new exthreadjoin();
 
-        t1.setName("Thread A");
-        t2.setName("Thread B");
-
-        t1.start();
-        try {
-            t1.join(); // main waits for t1 to finish
-        } catch (InterruptedException e) {
-            System.out.println(e);
-        }
-
-        t2.start(); // t2 starts only after t1 completes
+               t1.setName("Thread A");
+               t2.setName("Thread B");
+               t1.start();
+               try 
+               {
+                  t1.join(); // main waits for t1 to finish
+               } 
+               catch (InterruptedException e) 
+               {
+                  System.out.println(e);
+               }
+                  t2.start(); // t2 starts only after t1 completes
         }
        }
+
        
 ### Output:
-      
-         Thread A - Count: 1
-         Thread A - Count: 2
-         Thread A - Count: 3
-         Thread B - Count: 1
-         Thread B - Count: 2
-         Thread B - Count: 3
+
+![Screenshot 2025-05-26 151826](https://github.com/user-attachments/assets/fd4c5030-5bc1-4ff2-8b41-a000a4ab78ce)
 	 
 ### Class Implementing Runnable Interface
  
- Runnable is a functional interface in Java used to define a task that can be executed by a thread.
+Runnable is a functional interface in Java used to define a task that can be executed by a thread.
 It has a single method:
 
       public void run();
       
  ### Example 
       // Implementing the Runnable interface
-      class MyTask implements Runnable 
+      class exrunnableuse implements Runnable 
       {
-      public void run() 
-      {
-        System.out.println("Thread is running: " + Thread.currentThread().getName());
-    }
-    }
+           public void run() 
+           {
+              System.out.println("Thread is running: " + Thread.currentThread().getName());
+           }
+     public static void main(String[] args) 
+     {
+          // Create an object of the Runnable implementation
+          exrunnableuse task = new exrunnableuse();
 
-    public class Main {
-    public static void main(String[] args) {
-        // Create an object of the Runnable implementation
-        MyTask task = new MyTask();
+          // Create a Thread object and pass the task to it
+         Thread thread = new Thread(task);
 
-        // Create a Thread object and pass the task to it
-        Thread thread = new Thread(task);
-
-        // Start the thread
-        thread.start();
-    }
-    }
+         // Start the thread
+         thread.start();
+     }
+     }
 
 ### output:
-         Thread is running: Thread-0
+
+![Screenshot 2025-05-26 152256](https://github.com/user-attachments/assets/0bfc4a61-d999-4460-a604-10198a624124)
 
 ### Exception Handling 
 
@@ -1784,188 +1786,219 @@ Exception Handling is a mechanism to handle runtime errors such as ClassNotFound
 One of the primary mechanisms for handling exceptions in Java is the try-catch block. The try block contains the code that may throw an exception, and the catch block is used to handle the exception if it occurs.
 
 ### Syntax:
-               try {  
-               
-                  // Code that may throw an exception  
-                  
-              } catch (ExceptionType e) { 
-              
-               // Exception handling code  
-               
+               try 
+	       {  
+                  // Code that may throw an exception    
+               } 
+	       catch (ExceptionType e)
+	       { 
+                  // Exception handling code  
                }  
 
  ### Exampple:
-
-         public class TryCatchExample {
-         public static void main(String[] args) {
-        try {
-            int result = 10 / 0;  // ArithmeticException
-        } catch (ArithmeticException e) {
-            System.out.println("Cannot divide by zero.");
-        }
-        }
-      }
-
+         public class extryandcatch
+	 {
+         public static void main(String[] args) 
+         {
+              try 
+	      {
+                int result = 10 / 0;  // ArithmeticException
+              } 
+	      catch (ArithmeticException e) 
+              {
+                System.out.println("Cannot divide by zero.");
+              }
+          }
+          }
+    
 ### output:
-      Cannot divide by zero.
+
+![Screenshot 2025-05-26 152718](https://github.com/user-attachments/assets/85100cf1-c3e6-4f23-b50c-5cafe9c4bcce)
 
 ### 2. Multiple Catch Blocks
-
 Used to handle different types of exceptions separately.
 
 ### Example
-
-       public class MultipleCatchExample {
-       public static void main(String[] args) {
-        try {
-            int[] arr = new int[5];
-            arr[10] = 25;  // ArrayIndexOutOfBoundsException
-        } catch (ArithmeticException e) {
-            System.out.println("Arithmetic Error");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Array index out of bounds");
-        } catch (Exception e) {
-            System.out.println("General exception");
-        }
+        public class exmulticatch 
+	{
+        public static void main(String[] args) 
+	{
+             try 
+	     {
+                 int[] arr = new int[5];
+                 arr[10] = 25;          // ArrayIndexOutOfBoundsException
+             } 
+	     catch (ArithmeticException e) 
+             {
+                 System.out.println("Arithmetic Error");
+             } 
+	     catch (ArrayIndexOutOfBoundsException e) 
+             {
+                System.out.println("Array index out of bounds");
+             } 
+	     catch (Exception e) 
+             {
+               System.out.println("General exception");
+             }
+          }
        }
-     }
 
  ### output
- 
-       Array index out of bounds
+
+ ![Screenshot 2025-05-26 153102](https://github.com/user-attachments/assets/fc8110ed-e348-4704-9c23-87a5587ede0f)
 
 ### 3. Nested Try Block       
 
 A try block within another try block.
 
 ### Example:
-
-         public class NestedTryExample {
-        public static void main(String[] args) {
-        try {
-            System.out.println("Outer try block");
-            try {
+        public class exnestedtry 
+	{
+        public static void main(String[] args)
+        {
+            try 
+	    {
+                System.out.println("Outer try block");
+            try 
+	    {
                 int a = 10 / 0;  // ArithmeticException
-            } catch (ArithmeticException e) {
+            } 
+	    catch (ArithmeticException e) 
+            {
                 System.out.println("Inner catch: " + e);
             }
-        } catch (Exception e) {
-            System.out.println("Outer catch: " + e);
-        }
+            } 
+	    catch (Exception e) 
+            {
+               System.out.println("Outer catch: " + e);
+            }
+          }
        }
-     }
 
  ### output:
  
-        Outer try block
-        Inner catch: java.lang.ArithmeticException: / by zero
+![Screenshot 2025-05-26 153513](https://github.com/user-attachments/assets/8c1dc868-5689-403d-821c-01ae8baa5107)
 
 ### 4. Finally Block
        
 Code inside the finally block always executes, whether or not an exception occurs.
 
 ### Example:
-
-       public class FinallyExample {
-      public static void main(String[] args) {
-        try {
-            int data = 25 / 5;
-            System.out.println("Result: " + data);
-        } catch (NullPointerException e) {
-            System.out.println("Exception caught");
-        } finally {
-            System.out.println("This is the finally block");
-        }
-      }
-    }
-
+        public class exfinalblock 
+	{
+        public static void main(String[] args) 
+	{
+            try 
+	    {
+                int data = 25 / 5;
+                System.out.println("Result: " + data);
+            } 
+	    catch (NullPointerException e) 
+            {
+                System.out.println("Exception caught");
+            } 
+	    finally
+            {
+                System.out.println("This is the finally block");
+            }
+         }
+       }
+     
 ### output:
 
-        Result: 5
-        This is the finally block
-
-
+![Screenshot 2025-05-26 153843](https://github.com/user-attachments/assets/493bbd0b-4088-4fc8-ac8e-a1f882bb1396)
 
 ### 5. Throw Keyword
 
        Used to explicitly throw an exception.
 
 ### Example:
-
-        public class ThrowExample {
-        public static void main(String[] args) {
-        int age = 15;
-        if (age < 18) {
-            throw new ArithmeticException("Age must be 18 or above");
-        } else {
-            System.out.println("Eligible");
-        }
+        public class exthrow 
+	{
+        public static void main(String[] args) 
+	{
+            int age = 15;
+            if (age < 18)
+	    {
+               throw new ArithmeticException("Age must be 18 or above");
+            } 
+	    else 
+            {
+              System.out.println("Eligible");
+            }
+         }
        }
-      }
-
+       
  ### output:
 
-      Exception in thread "main" java.lang.ArithmeticException: Age must be 18 or above
-	   at ThrowExample.main(ThrowExample.java:5)
-
+![Screenshot 2025-05-26 154140](https://github.com/user-attachments/assets/5edd1ef9-b5cd-4f1e-99fd-be97ec817057)
 
 ### 6. Throws Keyword:
 
 Used to declare exceptions a method might throw.
 
 ### Example
-
-     import java.io.*;
-     public class ThrowsExample {
-    static void readFile() throws IOException
-     {
-        FileReader fr = new FileReader("abc.txt");  // Checked exception
-     }
-
-     public static void main(String[] args) {
-        try {
-            readFile();
-        } catch (IOException e) {
-            System.out.println("Handled exception: " + e.getMessage());
+       import java.io.*;
+       public class exthrows
+       {
+          static void readFile() throws IOException
+       {
+          FileReader fr = new FileReader("abc.txt");  // Checked exception
+       }
+       public static void main(String[] args) 
+       {
+            try 
+	    {
+              readFile();
+            } 
+	    catch (IOException e)
+            {
+              System.out.println("Handled exception: " + e.getMessage());
+            }
         }
-      }
-    }
+       }
 
  ### output:
  
-         Handled exception: abc.txt (No such file or directory)
-
+![Screenshot 2025-05-26 154827](https://github.com/user-attachments/assets/a0171459-5f0d-4184-96bc-f984341afa9d)
 
 ### 7. Custom Exception
 
 You can define your own exception class
 
 ### Example:
-
-        class MyException extends Exception {
-        public MyException(String message) {
-        super(message);
+        class excustomexp extends Exception 
+	{
+        public excustomexp (String message) 
+	{
+            super(message);
         }
-      }
-       public class CustomExceptionExample {
-       static void validate(int age) throws MyException {
-        if (age < 18) {
-            throw new MyException("Custom Exception: Age must be 18 or above");
         }
-       }  
-
-      public static void main(String[] args) {
-        try {
-            validate(16);
-        } catch (MyException e) {
-            System.out.println("Caught: " + e.getMessage());
+        class CustomExceptionExample 
+	{
+           static void validate(int age) throws excustomexp 
+	   {
+              if (age < 18) 
+	      {
+              throw new excustomexp("Custom Exception: Age must be 18 or above");
+              }
+           }  
+        public static void main(String[] args) 
+	{
+             try 
+	     {
+                validate(16);
+             } 
+	     catch (excustomexp e) 
+             {
+                System.out.println("Caught: " + e.getMessage());
+             }
+         }
         }
-      }
-     }
 
 ### output:
 
-     Caught: Custom Exception: Age must be 18 or above
+![Screenshot 2025-05-26 155819](https://github.com/user-attachments/assets/8835c1f8-db23-4fb1-a6c3-c0c680fec5be)
 
 ### types of Exception
 
@@ -1976,71 +2009,83 @@ If we divide any number by zero, there occurs an ArithmeticException.
 int a=50/0;//ArithmeticException  
 
 ### Example 
-
-        public class Main {    
-        public static void main(String[] args) {    
-        int dividend = 10;    
-        int divisor = 0;    
-        try {    
-            int result = dividend / divisor; // Division by zero    
-            System.out.println("Result: " + result);    
-        } catch (ArithmeticException e) {    
-            System.out.println("Error: Division by zero is not allowed.");    
-            // Additional error handling code can be added here    
-        }    
+        public class exarithmeticexp 
+	{   
+        public static void main(String[] args) 
+	{    
+            int dividend = 10;    
+            int divisor = 0;    
+            try 
+	    {    
+                int result = dividend / divisor; // Division by zero    
+                System.out.println("Result: " + result);    
+            } 
+	    catch (ArithmeticException e) 
+            {    
+                System.out.println("Error: Division by zero is not allowed.");    
+                // Additional error handling code can be added here    
+            }    
         }    
       }  
-
+      
 ### output:
 
-       Error: Division by zero is not allowed.
+![Screenshot 2025-05-26 160205](https://github.com/user-attachments/assets/f0e528c0-62c9-4308-a731-fd25506c156f)
        
 ### ArrayIndexOutOfBoundsException occurs
 
 When an array exceeds to it's size, the ArrayIndexOutOfBoundsException occurs. there may be other reasons to occur ArrayIndexOutOfBoundsException.
 
 ### Example
-
-         public class Main {    
-         public static void main(String[] args) {    
-        int[] numbers = {1, 2, 3, 4, 5}; // Initializing an array with 5 elements    
-        try {    
-            int index = 10; // Accessing an index that is out of bounds    
-            int value = numbers[index]; // Attempting to access an element at an invalid index    
-            System.out.println("Value at index " + index + ": " + value);    
-        } catch (ArrayIndexOutOfBoundsException e) {    
-            System.out.println("Error: Index is out of bounds.");    
-            // Additional error handling code can be added here    
-        }    
-      }    
-     }  
-     
+        public class exarrayindexp 
+	{
+        public static void main(String[] args) 
+	{    
+             int[] numbers = {1, 2, 3, 4, 5}; // Initializing an array with 5 elements    
+             try 
+	     {    
+                 int index = 10;             // Accessing an index that is out of bounds    
+                 int value = numbers[index]; // Attempting to access an element at an invalid index    
+                 System.out.println("Value at index " + index + ": " + value);    
+             } 
+	     catch (ArrayIndexOutOfBoundsException e) 
+             {    
+                 System.out.println("Error: Index is out of bounds.");    
+                 // Additional error handling code can be added here    
+             }    
+         }    
+       }  
+        
 ### output:
 
-      Error: Index is out of bounds.
+![Screenshot 2025-05-26 160518](https://github.com/user-attachments/assets/d627263c-60a3-4775-8e75-5af5660d700b)
       
 ### NullPointerException occurs
 
 If we have a null value in any variable, performing any operation on the variable throws a NullPointerException.   
 
 ### Example:
-
-         public class Main {    
-         public static void main(String[] args) {    
-        String str = null; // Initializing a String variable to null    
-        try {    
-            int length = str.length(); // Attempting to call a method on a null reference    
-            System.out.println("Length of the string: " + length);    
-        } catch (NullPointerException e) {    
-            System.out.println("Error: Null reference encountered.");    
-            // Additional error handling code can be added here    
-        }    
-       }    
-      } 
-
+         public class exnullpointexp 
+	 { 
+         public static void main(String[] args) 
+	 {    
+             String str = null; // Initializing a String variable to null    
+             try 
+	     {    
+                int length = str.length(); // Attempting to call a method on a null reference    
+                System.out.println("Length of the string: " + length);    
+             } 
+	     catch (NullPointerException e) 
+             {    
+                System.out.println("Error: Null reference encountered.");    
+                // Additional error handling code can be added here    
+             }    
+          }    
+       } 
+    
 ### output:
 
-        Error: Null reference encountered.
+![Screenshot 2025-05-26 160856](https://github.com/user-attachments/assets/6b2a15e8-ca0a-40d2-a7e8-d14dde0d66eb)
 
 ### IOException   
 
@@ -2063,28 +2108,32 @@ File is being used by another process
 Incorrect file path
 
 ### Example:
-
-     import java.io.*;
-     public class IOExceptionExample {
-      public static void main(String[] args) {
-        try {
-            // Attempting to read a file
-            BufferedReader reader = new BufferedReader(new FileReader("sample.txt"));
-
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-
-            reader.close();
-        } catch (IOException e) {
-            System.out.println("An I/O error occurred: " + e.getMessage());
-        }
-       }
-      }
+        import java.io.*;
+        public class exioexp 
+	{
+        public static void main(String[] args) 
+	{
+             try 
+	     {
+                // Attempting to read a file
+                BufferedReader reader = new BufferedReader(new FileReader("sample.txt"));
+                String line;
+                while ((line = reader.readLine()) != null) 
+		{
+                    System.out.println(line);
+                }
+                reader.close();
+                } 
+		catch (IOException e) 
+                {
+                   System.out.println("An I/O error occurred: " + e.getMessage());
+                }
+             }
+          }
+    
 ### output:
 
-       An I/O error occurred: sample.txt (No such file or directory)
+![Screenshot 2025-05-26 161236](https://github.com/user-attachments/assets/ec213f25-0cb7-41bc-b6bb-0d277b1c2dba)
 
 ### File Handling
 
