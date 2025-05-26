@@ -2141,130 +2141,137 @@ File handling in Java refers to the process of creating, reading, writing, updat
 
 ### Common File Handling Operations
 
-Operation   	Purpose
-
-Create 	--->    Make a new file
-Write	--->    Add content to a file
-Read	--->    Get content from a file
-Append	--->    Add more content to existing file
-Delete	--->    Remove a file from the system
-
 ### 1. Create a File
-
-            import java.io.File;
-            import java.io.IOException;
-            public class CreateFile {
-            public static void main(String[] args) {
-            try {
-            File file = new File("testfile.txt");
-            if (file.createNewFile()) {
-                System.out.println("File created: " + file.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-        }
-        }
-         }
-### output:
-
-       File created: testfile.txt
-       
-### 2. Write to a File
-         
-           import java.io.FileWriter;
-           import java.io.IOException;
-           public class WriteToFile {
-           public static void main(String[] args) {
-           try {
-            FileWriter writer = new FileWriter("testfile.txt");
-            writer.write("Hello from Java!\nFile handling is easy.");
-            writer.close();
-            System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-        }
-        }
-         }
-
-  ### output:
-  
-             Successfully wrote to the file.
-
-  ### 3.Read from a File
-
-           import java.io.File;
-           import java.io.FileNotFoundException;
-           import java.util.Scanner;
-           public class ReadFile {
-           public static void main(String[] args) {
-           try {
-            File file = new File("testfile.txt");
-            Scanner reader = new Scanner(file);
-            while (reader.hasNextLine()) {
-                String line = reader.nextLine();
-                System.out.println(line);
-            }
-            reader.close();
-           } catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-            }
-           }
-          }
-
-   ### Output:
-            
-         Hello from Java!
-         File handling is easy.
-         This line was appended.
-	 
-  ### 4. Append to a File
-  
-                import java.io.FileWriter;
-                import java.io.IOException;
-                public class AppendToFile 
-		{
-                public static void main(String[] args) 
-		{
-                try
-		{
-               FileWriter writer = new FileWriter("testfile.txt", true); // true = append mode
-               writer.write("\nThis line was appended.");
-               writer.close();
-              System.out.println("Successfully appended to the file.");
+          import java.io.File;
+          import java.io.IOException;
+          class excreatefile 
+	  {
+          public static void main(String[] args) 
+          {
+               try 
+              {
+                 File file = new File("testfile.txt");
+                 if (file.createNewFile()) 
+                 {
+                    System.out.println("File created: " + file.getName());
+                 } 
+		 else 
+                 {
+                    System.out.println("File already exists.");
+                 }
               } 
 	      catch (IOException e) 
               {
-              System.out.println("An error occurred.");
+                 System.out.println("An error occurred.");
+              }
+           }
+         }
+	 
+### output:
+
+![image](https://github.com/user-attachments/assets/79c09422-2518-4ba7-9361-a14710b3e0f2)
+      
+### 2. Write to a File
+          import java.io.FileWriter;
+          import java.io.IOException;
+          public class exwritefile 
+	  {
+          public static void main(String[] args) 
+	  {
+               try
+	       {
+                  FileWriter writer = new FileWriter("testfile.txt");
+                  writer.write("Hello from Java!\nFile handling is easy.");
+                  writer.close();
+                  System.out.println("Successfully wrote to the file.");
+                } 
+		catch (IOException e) 
+                {
+                    System.out.println("An error occurred.");
+                }
+           }
+         }
+	 
+  ### output:
+
+  ![Screenshot 2025-05-26 163652](https://github.com/user-attachments/assets/c05bf64f-2f80-45f0-9a6a-ceea0fb3996b)
+
+  ### 3.Read from a File
+            import java.io.File;
+            import java.io.FileNotFoundException;
+            import java.util.Scanner;
+            public class exreadfile 
+	    {
+            public static void main(String[] args) 
+	    {
+                 try 
+		 {
+                    File file = new File("testfile.txt");
+                    Scanner reader = new Scanner(file);
+                    while (reader.hasNextLine()) 
+		    {
+                       String line = reader.nextLine();
+                       System.out.println(line);
+                    }
+                    reader.close();
+                 } 
+		 catch (FileNotFoundException e) 
+                 {
+                    System.out.println("File not found.");
+                 }
               }
             }
-           }
-###  output:
 
-          Successfully appended to the file.
-
-
-  ###  5. Delete a File
-           
-             import java.io.File;
-             public class DeleteFile 
+   ### Output:
+   
+   ![Screenshot 2025-05-26 164122](https://github.com/user-attachments/assets/38bf1ab5-db4b-4f27-a4fb-bcd5e203807f)
+ 
+  ### 4. Append to a File
+             import java.io.FileWriter;
+             import java.io.IOException;
+             public class exappendfile 
 	     {
              public static void main(String[] args) 
 	     {
-            File file = new File("testfile.txt");
-           if (file.delete())
-	   {
-            System.out.println("Deleted the file: " + file.getName());
-           } else 
-	   {
-            System.out.println("Failed to delete the file.");
-        }
-         }
-       }
+                  try
+		  {
+                     FileWriter writer = new FileWriter("testfile.txt", true); // true = append mode
+                     writer.write("\nThis line was appended.");
+                     writer.close();
+                     System.out.println("Successfully appended to the file.");
+                  } 
+	          catch (IOException e) 
+                  {
+                     System.out.println("An error occurred.");
+                  }
+               }
+             }
+### output:
 
+![Screenshot 2025-05-26 164459](https://github.com/user-attachments/assets/3a383ef6-38ca-4aac-aebf-1571a0c5618f)
+
+ ###  5. Delete a File
+           import java.io.File;
+           public class exdeletefile 
+	   {
+           public static void main(String[] args) 
+	   {
+               File file = new File("testfile.txt");
+               if (file.delete())
+	       {
+                  System.out.println("Deleted the file: " + file.getName());
+               } 
+	       else 
+	       {
+                  System.out.println("Failed to delete the file.");
+               }
+            }
+         }
+	 
  ### output:
-          Deleted the file: testfile.txt
+ 
+![Screenshot 2025-05-26 164849](https://github.com/user-attachments/assets/3f01b035-67bc-49c4-ba5d-966ec480bec7)
+
 
 
 
