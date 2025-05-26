@@ -2141,7 +2141,7 @@ File handling in Java refers to the process of creating, reading, writing, updat
 
 ### Common File Handling Operations
 
-### 1. Create a File
+### 1.Create a File
           import java.io.File;
           import java.io.IOException;
           class excreatefile 
@@ -2171,7 +2171,7 @@ File handling in Java refers to the process of creating, reading, writing, updat
 
 ![image](https://github.com/user-attachments/assets/79c09422-2518-4ba7-9361-a14710b3e0f2)
       
-### 2. Write to a File
+### 2.Write to a File
           import java.io.FileWriter;
           import java.io.IOException;
           public class exwritefile 
@@ -2226,7 +2226,7 @@ File handling in Java refers to the process of creating, reading, writing, updat
    
    ![Screenshot 2025-05-26 164122](https://github.com/user-attachments/assets/38bf1ab5-db4b-4f27-a4fb-bcd5e203807f)
  
-  ### 4. Append to a File
+  ### 4.Append to a File
              import java.io.FileWriter;
              import java.io.IOException;
              public class exappendfile 
@@ -2250,7 +2250,7 @@ File handling in Java refers to the process of creating, reading, writing, updat
 
 ![Screenshot 2025-05-26 164459](https://github.com/user-attachments/assets/3a383ef6-38ca-4aac-aebf-1571a0c5618f)
 
- ###  5. Delete a File
+ ### 5.Delete a File
            import java.io.File;
            public class exdeletefile 
 	   {
