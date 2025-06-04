@@ -1773,6 +1773,135 @@ It has a single method:
 
 ![Screenshot 2025-05-26 152256](https://github.com/user-attachments/assets/0bfc4a61-d999-4460-a604-10198a624124)
 
+
+### String Handling
+
+#### String
+A String in Java is an object that represents a sequence of characters.
+
+### syntax
+String s = "Hello";  // This is a string declearation
+
+### Creating String
+        public class StringCreation 
+	{
+        public static void main(String[] args)
+	{
+           String s1 = "Java";
+           String s2 = new String("Java");
+           System.out.println("s1 == s2: " + (s1 == s2));            // Reference comparison
+           System.out.println("s1.equals(s2): " + s1.equals(s2));    // Content comparison
+         }
+       }
+       
+### output:
+![Screenshot 2025-06-04 170037](https://github.com/user-attachments/assets/3b4834ff-b4d1-4d3b-b0d1-bc0901a70005)
+
+### string split
+        public class StringSplit 
+	{
+        public static void main(String[] args) 
+	{
+            String fruits = "Apple,Mango,Banana";
+            String[] arr = fruits.split(",");
+            for (String fruit : arr) 
+	    {
+            System.out.println(fruit);
+            }
+         }
+        }
+### output:
+
+![Screenshot 2025-06-04 170846](https://github.com/user-attachments/assets/fbb23b10-aa57-409e-b647-f641d1247246)
+
+### convert lowercase to uppercase
+        public class ToUpperCaseExample 
+	{
+            public static void main(String[] args) 
+	    {
+                String str = "java programming";
+                String upper = str.toUpperCase();
+                System.out.println("Original: " + str);
+                System.out.println("Uppercase: " + upper);
+             }
+         }
+	 
+### output:
+
+![Screenshot 2025-06-04 171453](https://github.com/user-attachments/assets/afff683f-1fe1-4991-8f56-e2bad0f4d084)
+
+### Convert uppercase to lowercase
+       public class ToLowerCaseExample
+       {
+           public static void main(String[] args) 
+	   {
+               String str = "HELLO WORLD";
+               String lower = str.toLowerCase();
+               System.out.println("Original: " + str);
+               System.out.println("Lowercase: " + lower);
+            }
+         }
+	 
+### output:
+
+![Screenshot 2025-06-04 171821](https://github.com/user-attachments/assets/344acdf0-1265-4a11-8183-9dff5b2be61d)
+
+### Reverse a String
+         public class StringReverseExample
+	 {
+            public static void main(String[] args)
+	    {
+                 String str = "Hello";
+                 StringBuilder sb = new StringBuilder(str);
+                 sb.reverse();
+                 System.out.println("Original: " + str);
+                 System.out.println("Reversed: " + sb);
+             }
+          }
+
+### output:
+  
+![Screenshot 2025-06-04 172047](https://github.com/user-attachments/assets/467e42ea-c6a7-48fd-a16f-18af7850a417)
+
+ ### Compare String using compareTo()
+          public class CompareToExample 
+	  {
+              public static void main(String[] args) 
+	      {
+                 String s1 = "Apple";
+                 String s2 = "Banana";
+                 int result = s1.compareTo(s2);
+                 System.out.println("String 1: " + s1);
+                 System.out.println("String 2: " + s2);
+                 System.out.println("compareTo result: " + result);
+              }
+          }
+	  
+### output:
+
+![Screenshot 2025-06-04 172525](https://github.com/user-attachments/assets/808358e8-379b-43e8-a8c3-c13d27321053)
+
+### Find the length of a string
+       public class StringLengthExample
+       {
+           public static void main(String[] args) 
+	   {
+              String str = "OpenAI GPT";
+              int len = str.length();
+              System.out.println("String: " + str);
+              System.out.println("Length: " + len);
+           }
+        }
+	
+### output:
+
+![Screenshot 2025-06-04 172855](https://github.com/user-attachments/assets/b95be64d-a935-4a7f-8a88-00185c3d46fe)
+
+
+
+
+
+
 ### Exception Handling 
 
 ### Exception
