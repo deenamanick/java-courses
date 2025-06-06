@@ -1909,7 +1909,8 @@ String s = "Hello";  // This is a string declearation
 	     }   
           }
 ### output:
-  
+
+![Screenshot 2025-06-06 105819](https://github.com/user-attachments/assets/2dea0da9-fa6f-46f1-9e05-513125162446)
 
 ### Substring
         public class exsubstring 
@@ -1923,9 +1924,113 @@ String s = "Hello";  // This is a string declearation
 	 
   ### output:
   
+![Screenshot 2025-06-06 110934](https://github.com/user-attachments/assets/31ef7404-af4f-44a2-af51-b630c43c51eb)
 
+### String Reverse
+          public class exstrreverse 
+	  {
+              public static void main(String[] args)
+	      {
+                  String original = "Java programming";
+                  String reversed = "";
+                  for (int i = original.length() - 1; i >= 0; i--)
+		  {
+                       reversed += original.charAt(i);
+		  }
+                  System.out.println("Reversed: " + reversed);
+		  }
+            }
+	    
+### output:
 
+![Screenshot 2025-06-06 112119](https://github.com/user-attachments/assets/00f44479-9485-4798-87d5-ea72b7236435)
 
+### Character at Specific index
+        class exspcifiystr
+        {
+           public static void main(String[] args)
+	   {
+               String str = "Hello";
+               System.out.println(str.charAt(1)); 
+            }
+          }
+	  
+### output:
+
+![Screenshot 2025-06-06 114113](https://github.com/user-attachments/assets/48eebe37-b9fa-4d3a-8eb3-1faf9bf06f81)
+
+### Replace Characters:
+        public class strreplace
+	{
+           public static void main(String[] args)
+	   {
+               String str = "apple";
+               String replaced = str.replace('p', 'b');
+               System.out.println(replaced);
+	    }
+          }
+	  
+### output:
+
+![Screenshot 2025-06-06 114747](https://github.com/user-attachments/assets/c9a5e203-5b64-4307-8d90-1a7a7fab87a2)
+
+### Tirm White Spaces
+        public class trimspace 
+	{
+           public static void main(String[] args)
+	   {
+               String str = "  Hello World  ";
+               System.out.println("Before: [" + str + "]");
+               System.out.println("After: [" + str.trim() + "]");
+             }   
+	}
+ ### output:
+ ![Screenshot 2025-06-06 115050](https://github.com/user-attachments/assets/b9ea82e3-a689-447e-a02e-234b79de4407)
+
+### StratWith and EndsWith
+         public class startandendwith
+         {
+             public static void main(String[] args) 
+	     {
+                 String str = "Programming";
+                 System.out.println(str.startsWith("Pro")); 
+                 System.out.println(str.endsWith("ing"));   
+              }
+           }
+	   
+### output:
+
+![Screenshot 2025-06-06 115334](https://github.com/user-attachments/assets/e9e07601-2004-40c7-a5e0-3e80a68a8f7f)
+
+### String Appens
+      public class strappend 
+      {
+         public static void main(String[] args)
+	 {
+             StringBuilder sb = new StringBuilder("Java");
+             sb.append(" Programming");
+             System.out.println(sb.toString());
+           }
+        }
+	
+### output:
+
+![Screenshot 2025-06-06 115757](https://github.com/user-attachments/assets/1bbc1098-f066-4128-8291-7edd71bba6ae)
+
+### Prepend
+       public class strprepend 
+       {
+          public static void main(String[] args) 
+	  {
+              StringBuilder sb = new StringBuilder("Programming");
+              sb.insert(0, "Java ");
+              System.out.println(sb.toString());
+	   }
+        }
+
+ ### output:
+
+ ![Screenshot 2025-06-06 120104](https://github.com/user-attachments/assets/40226429-947f-45a9-a484-b7d3b0c38e8d)
 
 ### Exception Handling 
 
