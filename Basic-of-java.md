@@ -1897,7 +1897,32 @@ String s = "Hello";  // This is a string declearation
 
 ![Screenshot 2025-06-04 172855](https://github.com/user-attachments/assets/b95be64d-a935-4a7f-8a88-00185c3d46fe)
 
+### String Concatenation
+         public class strconcat 
+	 {
+             public static void main(String[] args) 
+	     {
+	         String s1 = "Hello";
+                 String s2 = "World";
+                 String result = s1 + " " + s2;
+                 System.out.println(result);
+	     }   
+          }
+### output:
+  
 
+### Substring
+        public class exsubstring 
+	{
+            public static void main(String[] args) 
+	    {
+                 String str = "Programming";
+                 System.out.println(str.substring(0, 6)); 
+             }
+         }
+	 
+  ### output:
+  
 
 
 
@@ -1905,7 +1930,6 @@ String s = "Hello";  // This is a string declearation
 ### Exception Handling 
 
 ### Exception
-
 In Java, an exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. These exceptions can occur for various reasons, such as invalid user input, file not found, or division by zero. When an exception occurs, it is typically represented by an object of a subclass of the java.lang.Exception class.
 
 Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
