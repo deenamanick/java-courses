@@ -485,7 +485,54 @@ You get metadata from a ResultSet using:
 
         con.setAutoCommit(true); // Optional, but good practice
 
- 
+## Servlet
+
+#### What is a Servlet?
+
+A Servlet is a Java program that runs on a web server and handles client requests (like from a web browser) and sends responses (like HTML or data). It is a key part of building dynamic web applications in Java.
+
+### Servlet Life Cycle:
+
+| Phase               | Method       | Description                                           |
+|------------------   |------------  |-------------------------------------------------------|
+| 1️⃣ Initialization   | `init()`    | Called once when the servlet is first created.        |
+| 2️⃣ Request Handling | `service()` | Called each time the servlet is requested (GET, POST, etc.). |
+| 3️⃣ Destruction      | `destroy()` | Called once when the servlet is being removed from memory. |
+
+#### Servlet Architecture:
+- Client (Browser) sends a request.
+
+- Web Server (e.g., Tomcat) forwards the request to the servlet.
+
+- Servlet processes the request.
+
+- Servlet sends a response back to the client.
+
+### Use Cases:
+- Login/Signup forms
+
+- Displaying dynamic content (user profiles, search results)
+
+- Connecting with databases (JDBC)
+
+- APIs and backend processing
+
+### Example Servlet Code:
+
+    import java.io.*;
+    import javax.servlet.*;
+    import javax.servlet.http.*;
+    public class HelloServlet extends HttpServlet 
+    {
+            public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+            {
+               response.setContentType("text/html");
+               PrintWriter out = response.getWriter();
+               out.println("<h1>Hello, this is a Servlet!</h1>");
+            }
+    }
+
 
 
 
