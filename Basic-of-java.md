@@ -533,7 +533,9 @@ A Servlet is a Java program that runs on a web server and handles client request
             }
     }
 
+### Developing Servlet in Java
 
+Servlets are Java programs that run on a server and handle client requests, typically HTTP requests. Here’s a step-by-step guide to developing a basic Servlet application using GenericServlet or HttpServlet.
 
 
 
