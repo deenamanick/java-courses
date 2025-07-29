@@ -537,6 +537,33 @@ A Servlet is a Java program that runs on a web server and handles client request
 
 Servlets are Java programs that run on a server and handle client requests, typically HTTP requests. Here’s a step-by-step guide to developing a basic Servlet application using GenericServlet or HttpServlet.
 
+### ServletRequest & ServletResponse:
+## ServletRequest Interface:
+Purpose:
+
+Used to get information from the client (e.g., form data, headers, parameters).
+
+package:
+
+javax.servlet.ServletRequest
+###  Common Methods of `ServletRequest`
+
+| Method                                      | Description                                           |
+|--------------------------------------------|-------------------------------------------------------|
+| `String getParameter(String name)`         | Returns the value of a request parameter.            |
+| `Enumeration<String> getParameterNames()`  | Returns an enumeration of all parameter names.       |
+| `String[] getParameterValues(String name)` | Returns multiple values for a parameter (e.g., checkboxes). |
+| `String getRemoteAddr()`                   | Returns IP address of the client.                    |
+| `int getContentLength()`                   | Returns the length of the request body.              |
+| `String getCharacterEncoding()`            | Returns the character encoding of the request.       |
+| `InputStream getInputStream()`             | Gets binary data from the client.                    |
+| `BufferedReader getReader()`               | Gets character data from the client.                 |
+
+
+
+
+
+
 
 
 
