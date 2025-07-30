@@ -559,6 +559,31 @@ javax.servlet.ServletRequest
 | `InputStream getInputStream()`             | Gets binary data from the client.                    |
 | `BufferedReader getReader()`               | Gets character data from the client.                 |
 
+### ServletResponse Interface
+Purpose:
+
+Used to send data back to the client, like HTML, JSON, plain text, etc.
+
+Package:
+
+javax.servlet.ServletResponse
+
+###  Common Methods of `ServletResponse`
+
+| Method                                     | Description                                                             |
+|-------------------------------------------|-------------------------------------------------------------------------|
+| `PrintWriter getWriter()`                 | Sends character text to the client.                                     |
+| `ServletOutputStream getOutputStream()`   | Sends binary data to the client.                                        |
+| `void setContentType(String type)`        | Sets MIME type of the response (e.g., `text/html`, `application/json`). |
+| `void setCharacterEncoding(String charset)` | Sets response encoding (e.g., `UTF-8`).                                |
+| `void setContentLength(int length)`       | Sets the content length of the response.                                |
+
+
+
+
+
+
+
 
 
 
