@@ -508,6 +508,9 @@ A Servlet is a Java program that runs on a web server and handles client request
 
 - Servlet sends a response back to the client.
 
+  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/80eb3bb3-df78-4c21-89ff-59793605beb1" />
+
+
 ### Use Cases:
 - Login/Signup forms
 
@@ -684,11 +687,332 @@ It is created once by the servlet container when the web application starts, and
                 out.println("Welcome to " + appName);
               }
           }
+          
+### HttpServlet
+
+###  What is HttpServlet? 
+
+The HttpServlet is a class in Java EE (Jakarta EE) that is part of the Servlet API used to create web applications.
+
+It is used to handle HTTP requests and responses — the core of how the Java-based web server communicates with web browsers or other HTTP clients.
+
+### Basic Lifecycle of HttpServlet:
+
+1.Loading: Servlet class is loaded by the container.
+2.Instantiation: An instance is created.
+3.Initialization: init() is called.
+4.Request Handling:
+  - Each HTTP request is handled in a separate thread
+  - Container calls service() method which dispatches to doGet(), doPost(), etc.
+5.Destruction: destroy() is called when the servlet is being removed.
+
+###  Example Code:
+
+        import java.io.*;
+        import javax.servlet.*;
+        import javax.servlet.http.*;
+        public class MyServlet extends HttpServlet 
+        {
+            public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+            {
+              response.setContentType("text/html");
+              PrintWriter out = response.getWriter();
+              out.println("<h1>Hello from HttpServlet!</h1>");
+            }
+            public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+            {
+               String name = request.getParameter("username");
+               response.setContentType("text/html");
+               PrintWriter out = response.getWriter();
+               out.println("<h1>Welcome " + name + "</h1>");
+            }
+          }
+          
+  ### web.xml Mapping
+
+        <servlet>
+            <servlet-name>MyServlet</servlet-name>
+            <servlet-class>MyServlet</servlet-class>
+       </servlet>
+       <servlet-mapping>
+          <servlet-name>MyServlet</servlet-name>
+          <url-pattern>/hello</url-pattern>
+     </servlet-mapping>
+
+### Advantages:
+
+   - Part of standard Java EE (widely supported)
+   - Simple for small apps
+   - Efficient for low-level web handling
+   - 
+### HttpServletRequest & HttpServletResponse
+
+### HttpServletRequest:
+
+HttpServletRequest is an interface in the Java Servlet API that represents the client's HTTP request.
+It allows a servlet to read form data, query parameters, headers, cookies, and session information.
+Common methods include getParameter(), getHeader(), getMethod(), and getSession().
+It provides access to both URL details and request body content.
+Used in doGet(), doPost(), etc., to handle incoming requests in servlets.
+It is passed automatically to servlets by the servlet container (like Tomcat).
+
+ ### Purpose:
+Used to read client request data like:
+
+- Form inputs
+- Query parameters
+- Request headers
+- Cookies
+- HTTP method
+- Path info
+- Session details
+- 
+### Methods
+
+| Method                   | Description                                            |
+|--------------------------|--------------------------------------------------------|
+| `getParameter(String name)`     | Gets a request parameter (e.g., form field).         |
+| `getParameterNames()`           | Returns an enumeration of all parameter names.       |
+| `getHeader(String name)`        | Gets the value of a specific HTTP header.            |
+| `getCookies()`                  | Returns an array of cookies sent by the client.      |
+| `getMethod()`                   | Returns the HTTP method (GET, POST, etc.).           |
+| `getRequestURI()`               | Returns the requested URI.                           |
+| `getRequestURL()`               | Returns the full URL.                                |
+| `getContextPath()`              | Gets the web application’s context path.             |
+| `getRemoteAddr()`               | Returns the IP address of the client.                |
+| `getSession()`                  | Returns the `HttpSession` object.                    |
+| `getInputStream()`              | Reads binary request body (e.g., file upload).       |
+| `getReader()`                   | Reads character request body (e.g., JSON payload).   |
+
+### HttpServletResponse:
+
+HttpServletResponse is an interface in the Java Servlet API used to send data back to the client.
+It allows servlets to set response content type, status codes, headers, and cookies.
+Common methods include getWriter(), setContentType(), sendRedirect(), and addCookie().
+It supports sending both character and binary data using output streams.
+Used in doGet(), doPost(), etc., to generate HTTP responses.
+The servlet container provides this object to the servlet automatically.
+
+ Purpose:
+ Used to send data back to the client, like:
+
+- HTML content
+- JSON data
+- File downloads
+- Status codes
+- Redirects
+- Cookies
+
+### Methods
+
+  | Method                             | Description                                                  |
+|------------------------------------|--------------------------------------------------------------|
+| `setContentType(String type)`      | Sets the MIME type (e.g., `text/html`, `application/json`).  |
+| `getWriter()`                      | Returns `PrintWriter` to send character data.                |
+| `getOutputStream()`                | Sends binary data (e.g., file, image).                       |
+| `sendRedirect(String url)`         | Redirects the client to another URL.                         |
+| `setStatus(int sc)`                | Sets the HTTP status code (e.g., 200, 404).                  |
+| `addCookie(Cookie cookie)`         | Adds a cookie to the response.                               |
+| `setHeader(String name, String value)` | Sets a custom response header.                            |
+
+### HttpServletRequest vs HttpServletResponse
+
+| Feature                 | `HttpServletRequest`                           | `HttpServletResponse`                               |
+|------------------------|-----------------------------------------------|-----------------------------------------------------|
+| Represents              | Client request                                 | Server response                                     |
+| Read or Write?          | Read from client                               | Write to client                                     |
+| Key Methods             | `getParameter()`, `getHeader()`, `getMethod()` | `getWriter()`, `setContentType()`, `sendRedirect()` |
+| Session Handling        | `getSession()`                                 | `addCookie()`                                       |
+| Stream Access           | `getInputStream()`, `getReader()`              | `getOutputStream()`, `getWriter()`                  |
+| Handles Content Type    | No                                             | Yes, `setContentType()`                             |
+| Response Status Control | No                                             | Yes, `setStatus()`, `sendError()`                   |
+
+### HTML to Servlet Communication:
+
+It is the process by which form data or user input from an HTML page is sent to a Java Servlet on the server, typically using HTTP methods like GET or POST.
+This is the basis for dynamic web applications in Java using Java EE / Jakarta EE
+
+### Workflow Diagram
+
+<img width="305" height="165" alt="image" src="https://github.com/user-attachments/assets/3efe1048-f5c7-4053-9a7e-9a0037f005fe" />
 
 
+[User fills HTML form] 
+          ↓
+[Submits form via HTTP (GET or POST)]
+          ↓
+[Web server (e.g., Tomcat) receives request]
+          ↓
+[Servlet handles it via doGet() or doPost()]
+          ↓
+[Servlet processes input and returns response (HTML, JSON, etc.)]
+
+### Key Components Involved:
+
+| Component           | Role                                                   |
+|---------------------|--------------------------------------------------------|
+| HTML Form           | Collects input from the user                           |
+| Servlet             | Handles request, processes input, sends back response  |
+| Web Server          | Hosts the servlet (e.g., Apache Tomcat)                |
+| Web.xml / @WebServlet | Maps URL to servlet                                 |
+
+### Example:
+
+### HTML Form (Frontend)
+
+        <!DOCTYPE html>
+        <html>
+          <head><title>Login Form</title></head>
+          <body>
+            <form action="LoginServlet" method="post">
+            Username: <input type="text" name="username" /><br />
+            Password: <input type="password" name="password" /><br />
+            <input type="submit" value="Login" />
+          </form>
+        </body>
+     </html>
+
+  ### Servlet (Backend Java Code)
+
+        import java.io.*;
+        import javax.servlet.*;
+        import javax.servlet.http.*;
+        @WebServlet("/LoginServlet")  // URL mapping
+        public class LoginServlet extends HttpServlet 
+        {
+            protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+            {
+               String user = request.getParameter("username");
+               String pass = request.getParameter("password");
+               response.setContentType("text/html");
+               PrintWriter out = response.getWriter();
+               if ("admin".equals(user) && "1234".equals(pass)) 
+               {
+                   out.println("<h2>Login successful!</h2>");
+               } 
+               else 
+               {
+                  out.println("<h2>Invalid credentials!</h2>");
+               }
+             }
+         }
+### Explanation of Key Servlet Code
+
+      | Method                          | Purpose                                          |
+|---------------------------------|--------------------------------------------------|
+| `getParameter("name")`          | Retrieves the form field value from request      |
+| `setContentType("text/html")`   | Sets MIME type for response                      |
+| `getWriter()`                   | Returns a writer to send HTML as response        |
+| `@WebServlet("/...")`           | Maps a URL to this servlet (annotation-based)    |
+
+### Servlet to DataBase Communication
+
+It is the process where a Java Servlet connects to a relational database (e.g., MySQL, Oracle, PostgreSQL) using JDBC (Java Database Connectivity) to perform CRUD operations as part of a web application.
+
+### Workflow Diagram
+
+<img width="512" height="163" alt="image" src="https://github.com/user-attachments/assets/818e7d41-fc58-43ef-940d-d8a40d0933e0" />
 
 
+[User submits HTML form]
+         ↓
+[Servlet receives request]
+         ↓
+[Servlet reads input using HttpServletRequest]
+         ↓
+[Servlet uses JDBC to connect to the database]
+         ↓
+[Servlet executes SQL (INSERT, SELECT, etc.)]
+         ↓
+[Result sent back using HttpServletResponse]
 
+### Key Components
+
+| Component           | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| HTML Form           | Collects user input                                          |
+| Servlet             | Handles request, performs DB logic                           |
+| JDBC Driver         | Java library to interact with a specific database            |
+| Database (e.g., MySQL) | Stores the data                                           |
+| Connection URL      | Defines DB connection settings (host, port, user, password)  |
+
+###  Example:
+
+       <form action="RegisterServlet" method="post">
+       Name: <input type="text" name="name" /><br />
+      Email: <input type="text" name="email" /><br />
+      <input type="submit" value="Register" />
+      </form>
+
+### Servlet Code
+
+       import java.io.*;
+       import java.sql.*;
+       import javax.servlet.*;
+       import javax.servlet.http.*;
+       import javax.servlet.annotation.WebServlet;
+       @WebServlet("/RegisterServlet")
+       public class RegisterServlet extends HttpServlet 
+       {
+           protected void doPost(HttpServletRequest request, HttpServletResponse response)
+           throws ServletException, IOException 
+           {
+              String name = request.getParameter("name");
+              String email = request.getParameter("email");
+              response.setContentType("text/html");
+              PrintWriter out = response.getWriter();
+              try 
+              {
+               // 1. Load JDBC driver
+               Class.forName("com.mysql.cj.jdbc.Driver");
+               // 2. Establish connection
+               Connection con = DriverManager.getConnection(
+               "jdbc:mysql://localhost:3306/mydb", "root", "password");
+               // 3. Create SQL query
+               String query = "INSERT INTO users (name, email) VALUES (?, ?)";
+               PreparedStatement pst = con.prepareStatement(query);
+               pst.setString(1, name);
+               pst.setString(2, email);
+              // 4. Execute update
+              int row = pst.executeUpdate();
+              if (row > 0) 
+              {
+                out.println("<h2>Registration Successful!</h2>");
+              }
+              // 5. Close resources
+              pst.close();
+              con.close();
+            } 
+            catch (Exception e) 
+            {
+            e.printStackTrace();
+            out.println("<h2>Error: " + e.getMessage() + "</h2>");
+           }
+        }
+      }
+
+### Database Table (MySQL)
+
+       CREATE DATABASE mydb;
+      USE mydb;
+      CREATE TABLE users (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(100),
+      email VARCHAR(100)
+     );
+
+### JDBC Driver Dependency (for Maven projects)
+
+Add to pom.xml:
+
+    <dependency>
+       <groupId>mysql</groupId>
+       <artifactId>mysql-connector-j</artifactId>
+       <version>8.0.33</version>
+    </dependency>
 
 
 
