@@ -578,6 +578,119 @@ javax.servlet.ServletResponse
 | `void setCharacterEncoding(String charset)` | Sets response encoding (e.g., `UTF-8`).                                |
 | `void setContentLength(int length)`       | Sets the content length of the response.                                |
 
+### ServletConfig
+### What is ServletConfig?
+ServletConfig is an interface in the javax.servlet package. It is used to pass initialization parameters to a particular servlet.
+
+When a servlet is initialized by the servlet container (like Tomcat), the container creates a ServletConfig object and passes it to the servlet’s init() method.
+
+### Why is it needed?
+Sometimes, we want to pass custom parameters to a servlet like:
+- Database connection info
+- Author name
+- Company details
+- API keys, etc.
+Instead of hardcoding these in Java code, we can put them in the web.xml file and access them using ServletConfig.
+
+### When is ServletConfig used?
+
+- When servlet-specific configuration is needed.
+- At the time of servlet initialization (init() method).
+
+### Methods in ServletConfig
+
+| Method | Description |
+|--------|-------------|
+| `String getServletName()` | Returns the name of the servlet |
+| `String getInitParameter(String name)` | Returns the value of a specific initialization parameter |
+| `Enumeration<String> getInitParameterNames()` | Returns all parameter names |
+| `ServletContext getServletContext()` | Returns the `ServletContext` object (shared across all servlets) |
+
+### Difference between ServletConfig and ServletContext
+
+| Feature       | ServletConfig                            | ServletContext                         |
+|---------------|-------------------------------------------|----------------------------------------|
+| Scope         | One servlet                              | All servlets                           |
+| Purpose       | Init parameters for specific servlet      | App-wide parameters                    |
+| Access        | Inside `init()` or via `getServletConfig()` | Via `getServletContext()`             |
+| Defined in    | Inside `<servlet>` tag                    | Inside `<context-param>` tag           |
+| Example Use   | API key for one servlet                   | Site-wide branding name                |
+
+### ServletContext
+
+###  What is ServletContext?
+ServletContext is an interface in the javax.servlet package that provides a way for servlets to:
+- Access shared resources
+- Communicate with other servlets
+- Store global application data
+It represents the entire web application running in a single Java EE web server (like Tomcat). It is shared across all servlets and JSPs in the application.
+
+###  Why is it needed?
+When you want to:
+- Store global parameters (e.g., app name, admin email)
+- Share data across multiple servlets
+- Access resources (HTML, images, files) in your app
+- Get the absolute path to your resources (for file I/O)
+- Log messages to the server log
+- 
+### When is ServletContext created?
+It is created once by the servlet container when the web application starts, and it is destroyed when the application shuts down.
+
+### How to Get ServletContext?
+1. Inside a Servlet:
+   ServletContext context = getServletContext();
+   
+2. From ServletConfig:
+    ServletContext context = config.getServletContext();
+
+### Methods in ServletContext
+
+| Method | Description |
+|--------|-------------|
+| `getInitParameter(String name)` | Gets context-wide init parameter (from `web.xml`) |
+| `getInitParameterNames()` | Gets all global init parameter names |
+| `getRealPath(String path)` | Gets absolute file system path of a resource |
+| `getContextPath()` | Returns the base URL path of the web app |
+| `getMimeType(String file)` | Returns MIME type of a file |
+| `getAttribute(String name)` | Gets an attribute (global variable) |
+| `setAttribute(String name, Object obj)` | Sets a global attribute |
+| `removeAttribute(String name)` | Removes a global attribute |
+| `getServerInfo()` | Returns server information |
+| `log(String message)` | Logs a message to server log |
+
+### Example: Define context-param in web.xml
+
+    <context-param>
+       <param-name>appName</param-name>
+       <param-value>Student Portal</param-value>
+    </context-param>
+    
+### Servlet Code to Access ServletContext:
+
+         public class MyServlet extends HttpServlet 
+         {
+              public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
+              {
+                 ServletContext context = getServletContext();
+                 // Access init parameter
+                 String appName = context.getInitParameter("appName");
+                // Set a global attribute
+                 context.setAttribute("username", "raja");
+                 // Get the real path of a file in the app
+                String filePath = context.getRealPath("/WEB-INF/config.properties");
+                // Log a message
+                context.log("App name accessed: " + appName);
+                PrintWriter out = response.getWriter();
+                out.println("Welcome to " + appName);
+              }
+          }
+
+
+
+
+
+
+
 
 
 
